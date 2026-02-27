@@ -20,7 +20,7 @@ body{font-family:'Josefin Sans',sans-serif;font-size:15px;background:var(--cream
 /* NAV */
 nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:22px 52px;display:flex;justify-content:space-between;align-items:center;transition:all .35s ease}
 nav.scrolled{background:rgba(26,46,30,.97);padding:14px 52px;box-shadow:0 2px 24px rgba(0,0,0,.3)}
-.nav-logo{font-family:'Cormorant Garamond',serif;font-size:21px;font-weight:500;color:var(--cream);letter-spacing:.12em;text-decoration:none}
+.nav-logo{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:600;color:var(--cream);letter-spacing:.12em;text-decoration:none;text-shadow:0 1px 8px rgba(0,0,0,.5)}
 .nav-logo span{color:var(--brass-light)}
 .nav-links{display:flex;gap:30px;list-style:none;align-items:center}
 .nav-links a{font-size:11px;font-weight:300;letter-spacing:.2em;text-transform:uppercase;color:rgba(245,240,232,.88);text-decoration:none;transition:color .2s}
@@ -41,10 +41,10 @@ nav.scrolled{background:rgba(26,46,30,.97);padding:14px 52px;box-shadow:0 2px 24
 .hero-bg{position:absolute;inset:0;background:linear-gradient(165deg,rgba(26,46,30,.05) 0%,rgba(26,46,30,.55) 50%,rgba(26,46,30,.93) 100%),url('https://a0.muscache.com/im/pictures/d69a25c3-50a6-442b-9b66-28bc9977c78c.jpg?im_w=1440') center/cover no-repeat;animation:heroZ 18s ease-out forwards}
 @keyframes heroZ{from{transform:scale(1.06)}to{transform:scale(1)}}
 .hero-content{position:relative;z-index:2;padding:0 72px 88px;max-width:840px}
-.hero-eyebrow{font-size:10.5px;font-weight:300;letter-spacing:.38em;text-transform:uppercase;color:var(--brass-light);margin-bottom:20px;opacity:0;animation:fUp .8s ease .3s forwards}
+.hero-eyebrow{font-size:13px;font-weight:400;letter-spacing:.32em;text-transform:uppercase;color:#e8d5b0;margin-bottom:20px;opacity:0;animation:fUp .8s ease .3s forwards;text-shadow:0 1px 6px rgba(0,0,0,.6)}
 .hero-title{font-family:'Cormorant Garamond',serif;font-size:clamp(50px,8vw,94px);font-weight:300;line-height:.95;color:var(--cream);margin-bottom:26px;opacity:0;animation:fUp .9s ease .5s forwards}
 .hero-title em{font-style:italic;color:var(--brass-light)}
-.hero-sub{font-size:12px;font-weight:300;letter-spacing:.2em;text-transform:uppercase;color:rgba(245,240,232,.82);margin-bottom:40px;opacity:0;animation:fUp .9s ease .7s forwards}
+.hero-sub{font-size:13px;font-weight:400;letter-spacing:.2em;text-transform:uppercase;color:rgba(245,240,232,.92);margin-bottom:40px;opacity:0;animation:fUp .9s ease .7s forwards;text-shadow:0 1px 6px rgba(0,0,0,.5)}
 .hero-pills{display:flex;flex-wrap:wrap;gap:9px;margin-bottom:44px;opacity:0;animation:fUp .9s ease .85s forwards}
 .hero-pill{font-size:10px;font-weight:300;letter-spacing:.16em;text-transform:uppercase;color:rgba(245,240,232,.88);border:1px solid rgba(245,240,232,.55);padding:7px 14px}
 .hero-actions{display:flex;gap:16px;align-items:center;flex-wrap:wrap;opacity:0;animation:fUp .9s ease 1s forwards}
@@ -329,7 +329,7 @@ footer{background:#111209;padding:64px 68px 40px}
 
 <!-- NAV -->
 <nav id="nav">
-  <a href="#" class="nav-logo"><img src="TaraLogo.jpg" alt="The Tara" style="height:44px;width:44px;object-fit:cover;border-radius:2px;margin-right:10px;vertical-align:middle;filter:brightness(0) invert(1)">The <span>Tara</span></a>
+  <a href="#" class="nav-logo"><img src="TaraLogo.jpg" alt="The Tara" style="height:52px;width:52px;object-fit:cover;border-radius:2px;margin-right:12px;vertical-align:middle;filter:brightness(0) invert(1);opacity:.95">The <span>Tara</span></a>
   <ul class="nav-links">
     <li><a href="#about">The House</a></li>
     <li><a href="#gallery">Gallery</a></li>
@@ -343,7 +343,7 @@ footer{background:#111209;padding:64px 68px 40px}
 
 <!-- HERO -->
 <section class="hero">
-  <div class="hero-bg" style="background:linear-gradient(165deg,rgba(26,46,30,.05) 0%,rgba(26,46,30,.55) 50%,rgba(26,46,30,.93) 100%),url('winter_exterior.jpg') center/cover no-repeat;animation:heroZ 18s ease-out forwards"></div>
+  <div class="hero-bg" style="background:linear-gradient(to bottom, rgba(0,0,0,.45) 0%, rgba(0,0,0,.1) 20%, rgba(26,46,30,.0) 40%, rgba(26,46,30,.55) 65%, rgba(26,46,30,.93) 100%),url('winter_exterior.jpg') center/cover no-repeat;animation:heroZ 18s ease-out forwards"></div>
   <div class="hero-content">
     <p class="hero-eyebrow">Bellaire, Michigan &nbsp;·&nbsp; Est. 1887 &nbsp;·&nbsp; Airbnb Superhost</p>
     <h1 class="hero-title">Downtown.<br><em>On the River.</em><br>Yours.</h1>
@@ -352,8 +352,8 @@ footer{background:#111209;padding:64px 68px 40px}
       <span class="hero-pill">3 Bedrooms · Sleeps 8</span>
       <span class="hero-pill">Kayaks & Paddleboards</span>
       <span class="hero-pill">Pet Friendly</span>
-      <span class="hero-pill">4.94★ · 34 Reviews</span>
       <span class="hero-pill">Top 5% on Airbnb</span>
+      <span class="hero-pill">4.94★ · 34 Reviews</span>
     </div>
     <div class="hero-actions">
       <a href="#returning" class="btn-p">Reserve Your Week</a>
@@ -441,7 +441,7 @@ footer{background:#111209;padding:64px 68px 40px}
       <p class="callout-a">— Verified Guest · 5-Star Review</p>
     </div>
     <div class="map-wrap reveal">
-      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5740.246!2d-85.21634!3d44.98362!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4821ceba1827f33f%3A0x8ef7e40bb07c09b0!2sBellaire%2C%20MI%2049615!5e0!3m2!1sen!2sus!4v1699999999999!5m2!1sen!2sus" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="The Tara · Bellaire Michigan"></iframe>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1435.2!2d-85.21301!3d44.97887!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4821ceba1827f33f%3A0x8ef7e40bb07c09b0!2s310+Bellaire+Hwy%2C+Bellaire%2C+MI+49615!5e1!3m2!1sen!2sus!4v1699999999999!5m2!1sen!2sus" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="The Tara · Bellaire Michigan"></iframe>
     </div>
   </div>
 </section>
@@ -483,7 +483,7 @@ footer{background:#111209;padding:64px 68px 40px}
 <!-- AMENITIES -->
 <section class="am-sec" id="amenities">
   <p class="s-label reveal">What's Included</p>
-  <h2 class="s-head reveal">Everything you need.<br><em>Nothing superfluous.</em></h2>
+  <h2 class="s-head reveal">Everything you need.<br><em>Nothing you don't.</em></h2>
   <div class="am-grid reveal">
     <div class="am-card"><span class="am-ico">🛶</span><div class="am-n">Water Gear</div><div class="am-d">Kayaks, canoes & paddleboards — included. Your dock, your river, the Southern Chain of Lakes.</div></div>
     <div class="am-card"><span class="am-ico">🐾</span><div class="am-n">Pet Friendly</div><div class="am-d">Bring the whole family. Your dogs are genuinely welcome — not just tolerated.</div></div>
@@ -604,7 +604,7 @@ footer{background:#111209;padding:64px 68px 40px}
     <p class="s-label reveal">Returning Guests</p>
     <h2 class="s-head reveal">Your week,<br><em>reserved.</em><br>Every year.</h2>
     <p class="ret-body reveal">Peak summer weeks fill fast — and returning guests get first access before we open the calendar publicly each fall. If you've stayed before, or you're ready to make The Tara your annual summer tradition, reach out directly. We'll hold your week.</p>
-    <p class="ret-body reveal" style="margin-top:15px">Direct bookings save on platform service fees for both of us. Questions? Call or text us at <strong style="color:var(--forest)">231.431.0041</strong>.</p>
+    <p class="ret-body reveal" style="margin-top:15px">Direct bookings save on platform service fees for both of us. <strong style="color:var(--forest)">Returning guests also enjoy preferred rates</strong> — call or text us at <strong style="color:var(--forest)">231.431.0041</strong> to inquire.</p>
   </div>
   <div class="ret-form reveal">
     <p class="ft-title">Reserve Directly</p>
@@ -614,7 +614,11 @@ footer{background:#111209;padding:64px 68px 40px}
       <a class="mailto-link" data-showtext="1" style="font-size:14px;font-weight:400;letter-spacing:.08em;color:var(--brass-light);text-decoration:none;display:flex;align-items:center;gap:10px">✉</a>
       <p style="font-size:11px;font-weight:300;color:rgba(245,240,232,.55);letter-spacing:.08em;margin-top:4px">Or use the form below — we respond within a few hours.</p>
     </div>
-    <form action="https://formspree.io/f/xreadgle" method="POST">
+    <div id="form-thanks" style="display:none;background:rgba(184,151,106,.15);border:1px solid rgba(184,151,106,.3);padding:28px;text-align:center;margin-bottom:20px">
+      <p style="font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:300;color:var(--cream);margin-bottom:8px">Thank you!</p>
+      <p style="font-size:13px;font-weight:300;color:rgba(245,240,232,.75);letter-spacing:.06em">We'll be in touch within a few hours.</p>
+    </div>
+    <form id="inquiry-form" action="https://formspree.io/f/xreadgle" method="POST">
       <div class="f-row">
         <div class="fg"><label class="fl">First Name</label><input class="fi" type="text" name="first" placeholder="Jane"></div>
         <div class="fg"><label class="fl">Last Name</label><input class="fi" type="text" name="last" placeholder="Smith"></div>
@@ -777,6 +781,36 @@ const obs=new IntersectionObserver(entries=>{
   entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target)}});
 },{threshold:.1,rootMargin:'0px 0px -32px 0px'});
 revs.forEach(r=>obs.observe(r));
+
+// Form — stay on page, show thank you
+const form = document.getElementById('inquiry-form');
+if(form){
+  form.addEventListener('submit', async function(e){
+    e.preventDefault();
+    const btn = form.querySelector('.f-btn');
+    btn.textContent = 'Sending...';
+    btn.disabled = true;
+    try {
+      const res = await fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: {Accept: 'application/json'}
+      });
+      if(res.ok){
+        form.style.display = 'none';
+        document.getElementById('form-thanks').style.display = 'block';
+      } else {
+        btn.textContent = 'Send Inquiry';
+        btn.disabled = false;
+        alert('Something went wrong — please call or email us directly.');
+      }
+    } catch(err){
+      btn.textContent = 'Send Inquiry';
+      btn.disabled = false;
+      alert('Something went wrong — please call or email us directly.');
+    }
+  });
+}
 
 // FAQ
 document.querySelectorAll('.faq-q').forEach(q=>{
