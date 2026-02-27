@@ -329,7 +329,7 @@ footer{background:#111209;padding:64px 68px 40px}
 
 <!-- NAV -->
 <nav id="nav">
-  <a href="#" class="nav-logo"><img src="TaraLogo.jpg" alt="The Tara" style="height:52px;width:52px;object-fit:cover;border-radius:2px;margin-right:12px;vertical-align:middle;filter:brightness(0) invert(1);opacity:.95">The <span>Tara</span></a>
+  <a href="#" class="nav-logo"><img src="TaraLogo.jpg" alt="The Tara" style="height:42px;width:42px;object-fit:cover;border-radius:2px;margin-right:12px;vertical-align:middle;opacity:.9">The <span>Tara</span></a>
   <ul class="nav-links">
     <li><a href="#about">The House</a></li>
     <li><a href="#gallery">Gallery</a></li>
@@ -353,6 +353,7 @@ footer{background:#111209;padding:64px 68px 40px}
       <span class="hero-pill">Kayaks & Paddleboards</span>
       <span class="hero-pill">Pet Friendly</span>
       <span class="hero-pill">Top 5% on Airbnb</span>
+      <div style="width:100%;height:0"></div>
       <span class="hero-pill">4.94★ · 34 Reviews</span>
     </div>
     <div class="hero-actions">
@@ -441,7 +442,7 @@ footer{background:#111209;padding:64px 68px 40px}
       <p class="callout-a">— Verified Guest · 5-Star Review</p>
     </div>
     <div class="map-wrap reveal">
-      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1435.2!2d-85.21301!3d44.97887!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4821ceba1827f33f%3A0x8ef7e40bb07c09b0!2s310+Bellaire+Hwy%2C+Bellaire%2C+MI+49615!5e1!3m2!1sen!2sus!4v1699999999999!5m2!1sen!2sus" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="The Tara · Bellaire Michigan"></iframe>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1435.2!2d-85.21301!3d44.97887!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4821cf1234567890%3A0xabcdef1234567890!2sThe+Tara%2C+Bellaire%2C+MI+49615!5e1!3m2!1sen!2sus!4v1699999999999!5m2!1sen!2sus" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="The Tara · Bellaire Michigan"></iframe>
     </div>
   </div>
 </section>
@@ -534,26 +535,14 @@ footer{background:#111209;padding:64px 68px 40px}
           </a>
         </div>
       </div>
-      <!-- Facebook Widget -->
-      <div style="background:var(--cream-dark);padding:32px;border:1px solid rgba(26,46,30,.08)">
-        <p class="s-label" style="margin-bottom:16px">Follow Along</p>
-        <div id="fb-root"></div>
-        <div class="fb-page"
-          data-href="https://www.facebook.com/bellairetara/"
-          data-tabs="timeline"
-          data-width="400"
-          data-height="280"
-          data-small-header="true"
-          data-adapt-container-width="true"
-          data-hide-cover="false"
-          data-show-facepile="false">
-        </div>
-        <script async defer crossorigin="anonymous"
-          src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v18.0">
-        </script>
-        <noscript>
-          <a href="https://www.facebook.com/bellairetara/" target="_blank" style="display:inline-block;margin-top:8px;font-size:11px;font-weight:300;letter-spacing:.2em;text-transform:uppercase;color:var(--forest);border-bottom:1px solid var(--forest);padding-bottom:2px;text-decoration:none">Visit us on Facebook →</a>
-        </noscript>
+      <!-- Facebook Widget replaced with link - convert page to Business Page to enable full embed -->
+      <div style="background:var(--cream-dark);padding:32px;border:1px solid rgba(26,46,30,.08);display:flex;flex-direction:column;align-items:flex-start;gap:16px">
+        <p class="s-label" style="margin-bottom:0">Follow Along</p>
+        <p style="font-size:14px;font-weight:300;line-height:1.8;color:var(--text-mid)">See what's happening at The Tara — seasonal updates, local happenings, and life on the Intermediate River.</p>
+        <a href="https://www.facebook.com/bellairetara/" target="_blank" style="display:inline-flex;align-items:center;gap:12px;background:var(--forest);color:var(--cream);font-family:'Josefin Sans',sans-serif;font-size:11px;font-weight:400;letter-spacing:.22em;text-transform:uppercase;padding:14px 28px;text-decoration:none;transition:background .2s" onmouseover="this.style.background='var(--forest-light)'" onmouseout="this.style.background='var(--forest)'">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          Follow on Facebook
+        </a>
       </div>
     </div>
   </div>
@@ -702,13 +691,9 @@ footer{background:#111209;padding:64px 68px 40px}
 <div class="soc-strip">
   <div class="soc-left">Follow <strong>The Tara</strong> through the seasons.</div>
   <div class="soc-links">
-    <a href="https://www.facebook.com" target="_blank" class="soc-btn">
+    <a href="https://www.facebook.com/bellairetara/" target="_blank" class="soc-btn">
       <svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
       Facebook
-    </a>
-    <a href="https://www.instagram.com" target="_blank" class="soc-btn">
-      <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
-      Instagram
     </a>
     <a class="mailto-link soc-btn">
       <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
@@ -725,7 +710,7 @@ footer{background:#111209;padding:64px 68px 40px}
 <footer>
   <div class="ft-grid">
     <div>
-      <div class="ft-brand"><img src="TaraLogo.jpg" alt="The Tara" style="height:52px;width:52px;object-fit:cover;border-radius:2px;margin-right:12px;vertical-align:middle;filter:brightness(0) invert(1);opacity:.85">The <span>Tara</span></div>
+      <div class="ft-brand"><img src="TaraLogo.jpg" alt="The Tara" style="height:48px;width:48px;object-fit:cover;border-radius:2px;margin-right:12px;vertical-align:middle;opacity:.85">The <span>Tara</span></div>
       <div class="ft-tag">Bellaire, Michigan · Est. 1887</div>
       <div class="ft-con">
         <a href="tel:+12314310041">📞 &nbsp;231.431.0041</a>
