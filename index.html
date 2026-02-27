@@ -1,0 +1,1583 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Tara — Bellaire, Michigan</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Josefin+Sans:wght@200;300;400&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --forest: #1a2e1e;
+    --forest-mid: #253828;
+    --forest-light: #3a5c42;
+    --cream: #f5f0e8;
+    --cream-dark: #ede6d6;
+    --brass: #b8976a;
+    --brass-light: #d4b48a;
+    --river: #5c8a9a;
+    --river-light: #7ab0c2;
+    --text-dark: #1a1a14;
+    --text-mid: #4a4a3a;
+    --text-light: #8a8a7a;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Josefin Sans', sans-serif;
+    background: var(--cream);
+    color: var(--text-dark);
+    overflow-x: hidden;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    padding: 24px 48px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.4s ease;
+  }
+  nav.scrolled {
+    background: rgba(26,46,30,0.97);
+    padding: 16px 48px;
+    backdrop-filter: blur(10px);
+  }
+  .nav-wordmark {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-weight: 500;
+    color: var(--cream);
+    letter-spacing: 0.12em;
+    text-decoration: none;
+  }
+  .nav-wordmark span {
+    color: var(--brass-light);
+  }
+  .nav-links {
+    display: flex;
+    gap: 36px;
+    list-style: none;
+    align-items: center;
+  }
+  .nav-links a {
+    font-size: 11px;
+    font-weight: 300;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(245,240,232,0.8);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--brass-light); }
+  .nav-cta {
+    background: var(--brass) !important;
+    color: var(--forest) !important;
+    padding: 10px 24px !important;
+    font-weight: 400 !important;
+    letter-spacing: 0.15em !important;
+    transition: background 0.2s !important;
+  }
+  .nav-cta:hover { background: var(--brass-light) !important; color: var(--forest) !important; }
+
+  /* ── HERO ── */
+  .hero {
+    height: 100vh;
+    min-height: 700px;
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    overflow: hidden;
+    background: var(--forest);
+  }
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    background: 
+      linear-gradient(160deg, rgba(26,46,30,0.15) 0%, rgba(26,46,30,0.7) 60%, rgba(26,46,30,0.92) 100%),
+      url('https://images.unsplash.com/photo-1587653915936-5e0340ede5d7?w=1600&q=80') center/cover no-repeat;
+    transform: scale(1.05);
+    animation: heroZoom 20s ease-out forwards;
+  }
+
+  /* Fallback scenic river/home image */
+  .hero-bg-fallback {
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(160deg, rgba(26,46,30,0.2) 0%, rgba(26,46,30,0.65) 55%, rgba(26,46,30,0.95) 100%),
+      url('https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=1600&q=80') center/cover no-repeat;
+  }
+
+  @keyframes heroZoom {
+    from { transform: scale(1.05); }
+    to { transform: scale(1.0); }
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    padding: 0 80px 100px;
+    max-width: 900px;
+  }
+
+  .hero-eyebrow {
+    font-size: 11px;
+    font-weight: 300;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--brass-light);
+    margin-bottom: 24px;
+    opacity: 0;
+    animation: fadeUp 0.8s ease 0.3s forwards;
+  }
+
+  .hero-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(56px, 8vw, 100px);
+    font-weight: 300;
+    line-height: 0.95;
+    color: var(--cream);
+    letter-spacing: -0.01em;
+    margin-bottom: 32px;
+    opacity: 0;
+    animation: fadeUp 0.9s ease 0.5s forwards;
+  }
+  .hero-title em {
+    font-style: italic;
+    color: var(--brass-light);
+  }
+
+  .hero-sub {
+    font-size: 13px;
+    font-weight: 200;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgba(245,240,232,0.7);
+    margin-bottom: 48px;
+    opacity: 0;
+    animation: fadeUp 0.9s ease 0.7s forwards;
+  }
+
+  .hero-badges {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 52px;
+    opacity: 0;
+    animation: fadeUp 0.9s ease 0.85s forwards;
+  }
+  .hero-badge {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(245,240,232,0.65);
+  }
+  .hero-badge::before {
+    content: '';
+    display: block;
+    width: 20px;
+    height: 1px;
+    background: var(--brass);
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    opacity: 0;
+    animation: fadeUp 0.9s ease 1s forwards;
+  }
+
+  .btn-primary {
+    display: inline-block;
+    background: var(--brass);
+    color: var(--forest);
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 11px;
+    font-weight: 400;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    padding: 18px 44px;
+    text-decoration: none;
+    transition: all 0.25s ease;
+  }
+  .btn-primary:hover {
+    background: var(--brass-light);
+    transform: translateY(-2px);
+  }
+
+  .btn-ghost {
+    display: inline-block;
+    color: var(--cream);
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 11px;
+    font-weight: 300;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    padding: 18px 0;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(245,240,232,0.3);
+    transition: all 0.25s ease;
+  }
+  .btn-ghost:hover {
+    color: var(--brass-light);
+    border-bottom-color: var(--brass-light);
+  }
+
+  .hero-scroll {
+    position: absolute;
+    bottom: 40px;
+    right: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    opacity: 0;
+    animation: fadeIn 1s ease 1.4s forwards;
+  }
+  .hero-scroll span {
+    font-size: 9px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: rgba(245,240,232,0.4);
+    writing-mode: vertical-rl;
+  }
+  .hero-scroll-line {
+    width: 1px;
+    height: 60px;
+    background: linear-gradient(to bottom, var(--brass), transparent);
+    animation: scrollLine 2s ease-in-out 1.6s infinite;
+  }
+
+  @keyframes scrollLine {
+    0%, 100% { transform: scaleY(1); opacity: 1; }
+    50% { transform: scaleY(0.4); opacity: 0.4; }
+  }
+
+  /* ── MARQUEE STRIP ── */
+  .marquee-strip {
+    background: var(--forest);
+    padding: 16px 0;
+    overflow: hidden;
+    border-top: 1px solid rgba(184,151,106,0.2);
+    border-bottom: 1px solid rgba(184,151,106,0.2);
+  }
+  .marquee-track {
+    display: flex;
+    gap: 0;
+    animation: marquee 30s linear infinite;
+    white-space: nowrap;
+  }
+  .marquee-item {
+    font-size: 10px;
+    font-weight: 300;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--brass);
+    padding: 0 40px;
+    flex-shrink: 0;
+  }
+  .marquee-dot {
+    color: rgba(184,151,106,0.4);
+    padding: 0;
+    font-size: 16px;
+  }
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+
+  /* ── SECTION STYLES ── */
+  section { position: relative; }
+
+  .section-label {
+    font-size: 10px;
+    font-weight: 300;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: var(--brass);
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  .section-label::after {
+    content: '';
+    display: block;
+    width: 40px;
+    height: 1px;
+    background: var(--brass);
+  }
+
+  .section-heading {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(38px, 5vw, 62px);
+    font-weight: 300;
+    line-height: 1.1;
+    color: var(--text-dark);
+  }
+  .section-heading em {
+    font-style: italic;
+    color: var(--forest-light);
+  }
+
+  /* ── INTRO ── */
+  .intro {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 600px;
+  }
+
+  .intro-left {
+    background: var(--forest);
+    padding: 100px 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .intro-left::before {
+    content: '1887';
+    position: absolute;
+    top: -20px;
+    right: -20px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 180px;
+    font-weight: 300;
+    color: rgba(184,151,106,0.06);
+    line-height: 1;
+    pointer-events: none;
+  }
+
+  .intro-left .section-label { color: var(--brass-light); }
+  .intro-left .section-label::after { background: var(--brass-light); }
+  .intro-left .section-heading { color: var(--cream); }
+  .intro-left .section-heading em { color: var(--river-light); }
+
+  .intro-body {
+    font-size: 14px;
+    font-weight: 200;
+    line-height: 1.9;
+    color: rgba(245,240,232,0.7);
+    margin-top: 28px;
+    max-width: 420px;
+  }
+
+  .intro-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    margin-top: 52px;
+    padding-top: 48px;
+    border-top: 1px solid rgba(184,151,106,0.2);
+  }
+  .intro-stat-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 48px;
+    font-weight: 300;
+    color: var(--brass-light);
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+  .intro-stat-label {
+    font-size: 10px;
+    font-weight: 300;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(245,240,232,0.45);
+  }
+
+  .intro-right {
+    position: relative;
+    overflow: hidden;
+  }
+  .intro-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 8s ease;
+  }
+  .intro-right:hover .intro-img {
+    transform: scale(1.04);
+  }
+  .intro-img-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(26,46,30,0.2), transparent 60%);
+  }
+
+  /* ── PROXIMITY ── */
+  .proximity {
+    background: var(--cream-dark);
+    padding: 100px 80px;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 80px;
+    align-items: start;
+  }
+
+  .proximity-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin-top: 48px;
+  }
+  .proximity-item {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    padding: 20px 0;
+    border-bottom: 1px solid rgba(26,46,30,0.1);
+    gap: 20px;
+  }
+  .proximity-item:first-child {
+    border-top: 1px solid rgba(26,46,30,0.1);
+  }
+  .proximity-place {
+    font-size: 13px;
+    font-weight: 300;
+    letter-spacing: 0.08em;
+    color: var(--text-mid);
+  }
+  .proximity-dist {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-weight: 300;
+    color: var(--forest-light);
+    text-align: right;
+    white-space: nowrap;
+  }
+
+  .proximity-callout {
+    background: var(--forest);
+    padding: 48px;
+    position: relative;
+    overflow: hidden;
+  }
+  .proximity-callout::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 4px;
+    height: 100%;
+    background: var(--brass);
+  }
+  .proximity-callout-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 26px;
+    font-weight: 300;
+    font-style: italic;
+    line-height: 1.5;
+    color: var(--cream);
+  }
+  .proximity-callout-attr {
+    font-size: 10px;
+    font-weight: 300;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--brass);
+    margin-top: 24px;
+  }
+
+  /* ── GALLERY ── */
+  .gallery {
+    padding: 100px 80px;
+    background: var(--cream);
+  }
+  .gallery-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 56px;
+  }
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    grid-template-rows: 340px 240px;
+    gap: 12px;
+  }
+  .gallery-cell {
+    overflow: hidden;
+    position: relative;
+    background: var(--forest-mid);
+  }
+  .gallery-cell:first-child {
+    grid-row: span 2;
+  }
+  .gallery-cell img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.7s ease;
+    filter: brightness(0.95);
+  }
+  .gallery-cell:hover img {
+    transform: scale(1.06);
+    filter: brightness(1.05);
+  }
+  .gallery-cell-label {
+    position: absolute;
+    bottom: 16px;
+    left: 16px;
+    font-size: 9px;
+    font-weight: 300;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: rgba(245,240,232,0.7);
+    background: rgba(26,46,30,0.6);
+    padding: 6px 12px;
+    backdrop-filter: blur(4px);
+  }
+
+  /* ── AMENITIES ── */
+  .amenities {
+    background: var(--forest);
+    padding: 100px 80px;
+  }
+  .amenities .section-label { color: var(--brass-light); }
+  .amenities .section-label::after { background: var(--brass-light); }
+  .amenities .section-heading { color: var(--cream); }
+
+  .amenities-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    margin-top: 60px;
+    background: rgba(184,151,106,0.15);
+    border: 1px solid rgba(184,151,106,0.15);
+  }
+  .amenity-card {
+    background: var(--forest);
+    padding: 40px 32px;
+    transition: background 0.25s;
+  }
+  .amenity-card:hover {
+    background: var(--forest-mid);
+  }
+  .amenity-icon {
+    font-size: 28px;
+    margin-bottom: 20px;
+    display: block;
+  }
+  .amenity-name {
+    font-size: 12px;
+    font-weight: 300;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--cream);
+    margin-bottom: 10px;
+  }
+  .amenity-desc {
+    font-size: 12px;
+    font-weight: 200;
+    line-height: 1.7;
+    color: rgba(245,240,232,0.45);
+  }
+
+  /* ── REVIEWS ── */
+  .reviews {
+    background: var(--cream-dark);
+    padding: 100px 80px;
+  }
+  .reviews-header {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: start;
+    margin-bottom: 72px;
+  }
+  .reviews-score {
+    display: flex;
+    align-items: baseline;
+    gap: 16px;
+    margin-top: 36px;
+  }
+  .reviews-score-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 80px;
+    font-weight: 300;
+    color: var(--forest);
+    line-height: 1;
+  }
+  .reviews-score-detail {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .stars {
+    color: var(--brass);
+    font-size: 18px;
+    letter-spacing: 2px;
+  }
+  .reviews-score-label {
+    font-size: 11px;
+    font-weight: 300;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--text-light);
+  }
+  .reviews-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 20px;
+  }
+  .reviews-badge {
+    font-size: 9px;
+    font-weight: 400;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--forest);
+    border: 1px solid rgba(26,46,30,0.25);
+    padding: 8px 16px;
+  }
+
+  .reviews-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+  .review-card {
+    background: var(--cream);
+    padding: 40px 36px;
+    border-top: 3px solid var(--brass);
+    position: relative;
+  }
+  .review-quote {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px;
+    font-weight: 300;
+    font-style: italic;
+    line-height: 1.6;
+    color: var(--text-dark);
+    margin-bottom: 28px;
+  }
+  .review-quote::before {
+    content: '\201C';
+    font-size: 60px;
+    line-height: 0;
+    vertical-align: -28px;
+    color: var(--brass);
+    margin-right: 4px;
+  }
+  .review-attr {
+    font-size: 10px;
+    font-weight: 300;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--text-light);
+  }
+  .review-attr strong {
+    display: block;
+    color: var(--text-mid);
+    font-weight: 400;
+    margin-bottom: 3px;
+  }
+
+  /* ── RETURNING GUESTS ── */
+  .returning {
+    background: var(--brass);
+    padding: 100px 80px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 100px;
+    align-items: center;
+  }
+  .returning .section-label { color: var(--forest); }
+  .returning .section-label::after { background: var(--forest); }
+  .returning .section-heading { color: var(--forest); }
+  .returning-body {
+    font-size: 14px;
+    font-weight: 200;
+    line-height: 1.9;
+    color: rgba(26,46,30,0.75);
+    margin-top: 24px;
+  }
+
+  .returning-form {
+    background: var(--forest);
+    padding: 52px 48px;
+  }
+  .form-heading {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 28px;
+    font-weight: 300;
+    color: var(--cream);
+    margin-bottom: 8px;
+  }
+  .form-sub {
+    font-size: 12px;
+    font-weight: 200;
+    letter-spacing: 0.1em;
+    color: rgba(245,240,232,0.5);
+    margin-bottom: 36px;
+  }
+  .form-group {
+    margin-bottom: 20px;
+  }
+  .form-label {
+    display: block;
+    font-size: 9px;
+    font-weight: 400;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--brass-light);
+    margin-bottom: 8px;
+  }
+  .form-input, .form-select, .form-textarea {
+    width: 100%;
+    background: rgba(245,240,232,0.05);
+    border: 1px solid rgba(184,151,106,0.25);
+    color: var(--cream);
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 13px;
+    font-weight: 200;
+    padding: 14px 18px;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+  .form-input:focus, .form-select:focus, .form-textarea:focus {
+    border-color: var(--brass);
+  }
+  .form-input::placeholder { color: rgba(245,240,232,0.3); }
+  .form-select {
+    -webkit-appearance: none;
+    cursor: pointer;
+  }
+  .form-select option { background: var(--forest); }
+  .form-textarea {
+    height: 100px;
+    resize: none;
+  }
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+  .form-submit {
+    width: 100%;
+    background: var(--brass);
+    color: var(--forest);
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 11px;
+    font-weight: 400;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    padding: 18px;
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s;
+    margin-top: 8px;
+  }
+  .form-submit:hover { background: var(--brass-light); }
+  .form-note {
+    font-size: 10px;
+    font-weight: 200;
+    color: rgba(245,240,232,0.35);
+    text-align: center;
+    margin-top: 16px;
+    line-height: 1.6;
+  }
+
+  /* ── BOOK / PLATFORMS ── */
+  .book {
+    background: var(--cream);
+    padding: 100px 80px;
+    text-align: center;
+  }
+  .book .section-label {
+    justify-content: center;
+  }
+  .book .section-label::after { display: none; }
+  .book .section-label::before {
+    content: '';
+    display: block;
+    width: 40px;
+    height: 1px;
+    background: var(--brass);
+  }
+  .book .section-heading {
+    margin: 0 auto 24px;
+    max-width: 600px;
+  }
+  .book-sub {
+    font-size: 13px;
+    font-weight: 200;
+    line-height: 1.8;
+    color: var(--text-mid);
+    max-width: 520px;
+    margin: 0 auto 60px;
+  }
+  .book-options {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+    max-width: 900px;
+    margin: 0 auto;
+    background: rgba(26,46,30,0.08);
+  }
+  .book-option {
+    background: var(--cream);
+    padding: 52px 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    text-decoration: none;
+    transition: background 0.25s;
+  }
+  .book-option:hover {
+    background: var(--cream-dark);
+  }
+  .book-option-icon {
+    width: 56px;
+    height: 56px;
+    border: 1px solid rgba(26,46,30,0.12);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+  }
+  .book-option-name {
+    font-size: 11px;
+    font-weight: 400;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--text-dark);
+  }
+  .book-option-desc {
+    font-size: 12px;
+    font-weight: 200;
+    line-height: 1.7;
+    color: var(--text-light);
+    text-align: center;
+  }
+  .book-option-link {
+    font-size: 10px;
+    font-weight: 400;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--brass);
+    border-bottom: 1px solid var(--brass);
+    padding-bottom: 2px;
+  }
+
+  /* ── FAQ ── */
+  .faq {
+    background: var(--forest);
+    padding: 100px 80px;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 100px;
+    align-items: start;
+  }
+  .faq .section-label { color: var(--brass-light); }
+  .faq .section-label::after { background: var(--brass-light); }
+  .faq .section-heading { color: var(--cream); }
+  .faq-body {
+    font-size: 13px;
+    font-weight: 200;
+    line-height: 1.8;
+    color: rgba(245,240,232,0.55);
+    margin-top: 24px;
+  }
+
+  .faq-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+  }
+  .faq-item {
+    border-bottom: 1px solid rgba(184,151,106,0.15);
+  }
+  .faq-item:first-child {
+    border-top: 1px solid rgba(184,151,106,0.15);
+  }
+  .faq-q {
+    font-size: 13px;
+    font-weight: 300;
+    letter-spacing: 0.06em;
+    color: var(--cream);
+    padding: 28px 0;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+    user-select: none;
+    transition: color 0.2s;
+  }
+  .faq-q:hover { color: var(--brass-light); }
+  .faq-q::after {
+    content: '+';
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 28px;
+    font-weight: 300;
+    color: var(--brass);
+    transition: transform 0.25s;
+    flex-shrink: 0;
+    margin-left: 20px;
+  }
+  .faq-item.open .faq-q::after {
+    transform: rotate(45deg);
+  }
+  .faq-a {
+    font-size: 13px;
+    font-weight: 200;
+    line-height: 1.85;
+    color: rgba(245,240,232,0.55);
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, padding 0.3s ease;
+  }
+  .faq-item.open .faq-a {
+    max-height: 300px;
+    padding-bottom: 28px;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--text-dark);
+    padding: 72px 80px 48px;
+  }
+  .footer-top {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 60px;
+    padding-bottom: 56px;
+    border-bottom: 1px solid rgba(245,240,232,0.08);
+  }
+  .footer-brand {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 28px;
+    font-weight: 300;
+    color: var(--cream);
+    letter-spacing: 0.08em;
+    margin-bottom: 16px;
+  }
+  .footer-brand span { color: var(--brass); }
+  .footer-tagline {
+    font-size: 11px;
+    font-weight: 200;
+    letter-spacing: 0.15em;
+    color: rgba(245,240,232,0.35);
+    text-transform: uppercase;
+    margin-bottom: 28px;
+  }
+  .footer-contact-item {
+    font-size: 12px;
+    font-weight: 200;
+    color: rgba(245,240,232,0.5);
+    margin-bottom: 8px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .footer-contact-item:hover { color: var(--brass-light); }
+  .footer-col-heading {
+    font-size: 10px;
+    font-weight: 400;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--brass);
+    margin-bottom: 28px;
+  }
+  .footer-links {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+  .footer-links a {
+    font-size: 12px;
+    font-weight: 200;
+    color: rgba(245,240,232,0.5);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .footer-links a:hover { color: var(--brass-light); }
+  .footer-season-note {
+    font-size: 11px;
+    font-weight: 200;
+    line-height: 1.8;
+    color: rgba(245,240,232,0.4);
+  }
+  .footer-season-note strong {
+    color: var(--brass);
+    font-weight: 300;
+  }
+  .footer-bottom {
+    padding-top: 36px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .footer-copy {
+    font-size: 10px;
+    font-weight: 200;
+    letter-spacing: 0.15em;
+    color: rgba(245,240,232,0.25);
+    text-transform: uppercase;
+  }
+  .footer-superhost {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 10px;
+    font-weight: 300;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(245,240,232,0.35);
+  }
+  .superhost-badge {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--brass);
+    display: inline-block;
+  }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(32px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 1024px) {
+    nav { padding: 20px 32px; }
+    nav.scrolled { padding: 14px 32px; }
+    .hero-content { padding: 0 48px 80px; }
+    .hero-scroll { right: 48px; }
+    .intro { grid-template-columns: 1fr; }
+    .intro-right { height: 400px; }
+    .proximity { grid-template-columns: 1fr; padding: 72px 48px; gap: 48px; }
+    .gallery { padding: 72px 48px; }
+    .gallery-grid { grid-template-columns: 1fr 1fr; grid-template-rows: auto; }
+    .gallery-cell:first-child { grid-row: span 1; grid-column: span 2; height: 360px; }
+    .gallery-cell { height: 240px; }
+    .amenities { padding: 72px 48px; }
+    .amenities-grid { grid-template-columns: repeat(2, 1fr); }
+    .reviews { padding: 72px 48px; }
+    .reviews-header { grid-template-columns: 1fr; gap: 36px; }
+    .reviews-cards { grid-template-columns: 1fr; }
+    .returning { grid-template-columns: 1fr; padding: 72px 48px; gap: 52px; }
+    .book { padding: 72px 48px; }
+    .book-options { grid-template-columns: 1fr; max-width: 400px; }
+    .faq { grid-template-columns: 1fr; padding: 72px 48px; gap: 48px; }
+    footer { padding: 56px 48px 36px; }
+    .footer-top { grid-template-columns: 1fr 1fr; gap: 40px; }
+  }
+
+  @media (max-width: 640px) {
+    nav { padding: 16px 20px; }
+    nav.scrolled { padding: 12px 20px; }
+    .nav-links { display: none; }
+    .hero-content { padding: 0 24px 64px; }
+    .hero-scroll { display: none; }
+    .intro-left { padding: 64px 28px; }
+    .intro-stats { grid-template-columns: 1fr 1fr; }
+    .proximity { padding: 64px 24px; }
+    .gallery { padding: 64px 24px; }
+    .amenities { padding: 64px 24px; }
+    .amenities-grid { grid-template-columns: 1fr 1fr; }
+    .reviews { padding: 64px 24px; }
+    .returning { padding: 64px 24px; }
+    .returning-form { padding: 36px 24px; }
+    .form-row { grid-template-columns: 1fr; }
+    .book { padding: 64px 24px; }
+    .faq { padding: 64px 24px; }
+    footer { padding: 48px 24px 32px; }
+    .footer-top { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav">
+  <a href="#" class="nav-wordmark">The <span>Tara</span></a>
+  <ul class="nav-links">
+    <li><a href="#about">The House</a></li>
+    <li><a href="#gallery">Gallery</a></li>
+    <li><a href="#reviews">Reviews</a></li>
+    <li><a href="#faq">Details</a></li>
+    <li><a href="#book" class="nav-cta">Reserve</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-content">
+    <p class="hero-eyebrow">Bellaire, Michigan &nbsp;·&nbsp; Est. 1887</p>
+    <h1 class="hero-title">Downtown.<br><em>On the River.</em><br>Yours.</h1>
+    <p class="hero-sub">Historic home &nbsp;·&nbsp; Riverside dock &nbsp;·&nbsp; Walk to everything</p>
+    <div class="hero-badges">
+      <span class="hero-badge">3 Bedrooms</span>
+      <span class="hero-badge">8 Guests</span>
+      <span class="hero-badge">Kayaks & Paddleboards</span>
+      <span class="hero-badge">Pet Friendly</span>
+      <span class="hero-badge">Superhost · 4.94★</span>
+    </div>
+    <div class="hero-actions">
+      <a href="#book" class="btn-primary">Reserve Your Week</a>
+      <a href="#about" class="btn-ghost">Explore the House</a>
+    </div>
+  </div>
+  <div class="hero-scroll">
+    <div class="hero-scroll-line"></div>
+    <span>Scroll</span>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee-strip">
+  <div class="marquee-track">
+    <span class="marquee-item">Downtown Bellaire</span><span class="marquee-item marquee-dot">·</span>
+    <span class="marquee-item">Riverside Dock</span><span class="marquee-item marquee-dot">·</span>
+    <span class="marquee-item">Torch Lake Access</span><span class="marquee-item marquee-dot">·</span>
+    <span class="marquee-item">Kayaks & Paddleboards</span><span class="marquee-item marquee-dot">·</span>
+    <span class="marquee-item">Short's Brewing</span><span class="marquee-item marquee-dot">·</span>
+    <span class="marquee-item">Mountain Biking</span><span class="marquee-item marquee-dot">·</span>
+    <span class="marquee-item">Pet Friendly</span><span class="marquee-item marquee-dot">·</span>
+    <span class="marquee-item">Superhost</span><span class="marquee-item marquee-dot">·</span>
+    <span class="marquee-item">Historic 1887 Home</span><span class="marquee-item marquee-dot">·</span>
+    <!-- duplicate for seamless loop -->
+    <span class="marquee-item">Downtown Bellaire</span><span class="marquee-item marquee-dot">·</span>
+    <span class="marquee-item">Riverside Dock</span><span class="marquee-item marquee-dot">·</span>
+    <span class="marquee-item">Torch Lake Access</span><span class="marquee-item marquee-dot">·</span>
+    <span class="marquee-item">Kayaks & Paddleboards</span><span class="marquee-item marquee-dot">·</span>
+    <span class="marquee-item">Short's Brewing</span><span class="marquee-item marquee-dot">·</span>
+    <span class="marquee-item">Mountain Biking</span><span class="marquee-item marquee-dot">·</span>
+    <span class="marquee-item">Pet Friendly</span><span class="marquee-item marquee-dot">·</span>
+    <span class="marquee-item">Superhost</span><span class="marquee-item marquee-dot">·</span>
+    <span class="marquee-item">Historic 1887 Home</span><span class="marquee-item marquee-dot">·</span>
+  </div>
+</div>
+
+<!-- INTRO -->
+<section class="intro" id="about">
+  <div class="intro-left">
+    <p class="section-label">The House</p>
+    <h2 class="section-heading reveal">Where history<br>meets the <em>river.</em></h2>
+    <p class="intro-body reveal">Built in 1887 on "The Terrace" — one of Bellaire's most storied residential streets — The Tara is a rare thing: a beautifully restored historic home sitting steps from downtown and directly above the Intermediate River, with a private dock and access to the Southern Chain of Lakes including Lake Bellaire and Torch Lake.</p>
+    <div class="intro-stats reveal">
+      <div>
+        <div class="intro-stat-num">4.94</div>
+        <div class="intro-stat-label">Overall Rating</div>
+      </div>
+      <div>
+        <div class="intro-stat-num">★★★★★</div>
+        <div class="intro-stat-label">Communication</div>
+      </div>
+      <div>
+        <div class="intro-stat-num">Top 5%</div>
+        <div class="intro-stat-label">Homes on Airbnb</div>
+      </div>
+      <div>
+        <div class="intro-stat-num">100%</div>
+        <div class="intro-stat-label">Response Rate</div>
+      </div>
+    </div>
+  </div>
+  <div class="intro-right">
+    <img class="intro-img"
+      src="https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6?w=900&q=80"
+      alt="The Tara riverfront"
+    >
+    <div class="intro-img-overlay"></div>
+  </div>
+</section>
+
+<!-- PROXIMITY -->
+<section class="proximity" id="location">
+  <div>
+    <p class="section-label reveal">Location</p>
+    <h2 class="section-heading reveal">Everything<br><em>close.</em><br>Nothing<br>crowded.</h2>
+    <ul class="proximity-list reveal">
+      <li class="proximity-item">
+        <span class="proximity-place">Short's Brewing Company</span>
+        <span class="proximity-dist">Walk</span>
+      </li>
+      <li class="proximity-item">
+        <span class="proximity-place">Downtown Bellaire Shops & Dining</span>
+        <span class="proximity-dist">2 min</span>
+      </li>
+      <li class="proximity-item">
+        <span class="proximity-place">Torch Lake Public Access</span>
+        <span class="proximity-dist">10 min</span>
+      </li>
+      <li class="proximity-item">
+        <span class="proximity-place">Shanty Creek / Schuss Mountain</span>
+        <span class="proximity-dist">12 min</span>
+      </li>
+      <li class="proximity-item">
+        <span class="proximity-place">Glacial Hills Mountain Biking</span>
+        <span class="proximity-dist">15 min</span>
+      </li>
+      <li class="proximity-item">
+        <span class="proximity-place">Traverse City</span>
+        <span class="proximity-dist">45 min</span>
+      </li>
+    </ul>
+  </div>
+  <div>
+    <div class="proximity-callout reveal">
+      <p class="proximity-callout-text">"You probably won't be spending much time inside. If you aren't mountain biking, you might be fishing, kayaking, paddle boarding or simply sitting on the dock with a glass of wine watching baby deer or boats passing by."</p>
+      <p class="proximity-callout-attr">— Verified Guest Review</p>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="gallery" id="gallery">
+  <div class="gallery-header">
+    <div>
+      <p class="section-label reveal">Gallery</p>
+      <h2 class="section-heading reveal">See <em>The Tara</em></h2>
+    </div>
+    <a href="https://www.airbnb.com/rooms/942041469547050838" target="_blank" class="btn-ghost reveal" style="color:var(--text-mid); border-color: rgba(26,46,30,0.25);">View all photos →</a>
+  </div>
+  <div class="gallery-grid reveal">
+    <div class="gallery-cell">
+      <img src="https://images.unsplash.com/photo-1449844908441-8829872d2607?w=900&q=80" alt="Riverside exterior">
+      <span class="gallery-cell-label">Riverside Exterior</span>
+    </div>
+    <div class="gallery-cell">
+      <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600&q=80" alt="Kitchen">
+      <span class="gallery-cell-label">Kitchen</span>
+    </div>
+    <div class="gallery-cell">
+      <img src="https://images.unsplash.com/photo-1540518614846-7eded433c457?w=600&q=80" alt="Primary Bedroom">
+      <span class="gallery-cell-label">Primary Bedroom</span>
+    </div>
+    <div class="gallery-cell">
+      <img src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=600&q=80" alt="The Dock">
+      <span class="gallery-cell-label">The Dock</span>
+    </div>
+    <div class="gallery-cell">
+      <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&q=80" alt="River Views">
+      <span class="gallery-cell-label">Intermediate River</span>
+    </div>
+  </div>
+</section>
+
+<!-- AMENITIES -->
+<section class="amenities" id="amenities">
+  <p class="section-label reveal">What's Included</p>
+  <h2 class="section-heading reveal">Everything you need.<br><em>Nothing superfluous.</em></h2>
+  <div class="amenities-grid reveal">
+    <div class="amenity-card">
+      <span class="amenity-icon">🛶</span>
+      <div class="amenity-name">Water Gear</div>
+      <div class="amenity-desc">Kayaks, canoes & paddleboards — all included. Your dock, your river.</div>
+    </div>
+    <div class="amenity-card">
+      <span class="amenity-icon">🐾</span>
+      <div class="amenity-name">Pet Friendly</div>
+      <div class="amenity-desc">Bring the whole family. Your dogs are genuinely welcome here.</div>
+    </div>
+    <div class="amenity-card">
+      <span class="amenity-icon">🔑</span>
+      <div class="amenity-name">Self Check-In</div>
+      <div class="amenity-desc">Keypad entry. Arrive on your schedule, no coordination needed.</div>
+    </div>
+    <div class="amenity-card">
+      <span class="amenity-icon">🍳</span>
+      <div class="amenity-name">Full Kitchen</div>
+      <div class="amenity-desc">New appliances, immaculate cookware, beautiful dishes. Cook like you're home.</div>
+    </div>
+    <div class="amenity-card">
+      <span class="amenity-icon">🔥</span>
+      <div class="amenity-name">Fire Pit</div>
+      <div class="amenity-desc">Evening bonfires on the property. S'mores are not optional.</div>
+    </div>
+    <div class="amenity-card">
+      <span class="amenity-icon">🚗</span>
+      <div class="amenity-name">Free Parking</div>
+      <div class="amenity-desc">On-site garage parking. No meters, no permits, no hassle.</div>
+    </div>
+    <div class="amenity-card">
+      <span class="amenity-icon">💻</span>
+      <div class="amenity-name">Fast WiFi</div>
+      <div class="amenity-desc">Dedicated workspace for the working guest. Disconnect or don't — your call.</div>
+    </div>
+    <div class="amenity-card">
+      <span class="amenity-icon">🛏</span>
+      <div class="amenity-name">3 Bedrooms</div>
+      <div class="amenity-desc">Three queen beds, luxury linens, individual storage in every room. Sleeps 8.</div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="reviews" id="reviews">
+  <div class="reviews-header">
+    <div>
+      <p class="section-label reveal">Guest Reviews</p>
+      <h2 class="section-heading reveal">What guests<br>are <em>saying.</em></h2>
+      <div class="reviews-score reveal">
+        <div class="reviews-score-num">4.94</div>
+        <div class="reviews-score-detail">
+          <span class="stars">★★★★★</span>
+          <span class="reviews-score-label">34 reviews · Superhost</span>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="reviews-badges reveal">
+        <span class="reviews-badge">5.0 Communication</span>
+        <span class="reviews-badge">5.0 Location</span>
+        <span class="reviews-badge">5.0 Check-in</span>
+        <span class="reviews-badge">4.9 Cleanliness</span>
+        <span class="reviews-badge">4.9 Value</span>
+        <span class="reviews-badge">Top 5% of Homes</span>
+      </div>
+    </div>
+  </div>
+  <div class="reviews-cards">
+    <div class="review-card reveal">
+      <p class="review-quote">Outdoor enthusiasts paradise. If you aren't mountain biking, you might be fishing, kayaking, or simply sitting on the dock with a glass of wine watching baby deer pass by.</p>
+      <div class="review-attr"><strong>Verified Guest</strong>5-star stay · Summer</div>
+    </div>
+    <div class="review-card reveal">
+      <p class="review-quote">The house looked like it was styled out of a magazine. Every inch of the property was well planned out and cared for. This was our first experience renting — it was a dream scenario.</p>
+      <div class="review-attr"><strong>Verified Guest</strong>5-star stay · Family visit</div>
+    </div>
+    <div class="review-card reveal">
+      <p class="review-quote">Beautifully renovated and elegantly appointed. The towels were luxurious, the kitchen perfect. We spent many hours on the front porch. Anne and Dave were perfect hosts.</p>
+      <div class="review-attr"><strong>Verified Guest</strong>5-star stay · Week-long stay</div>
+    </div>
+  </div>
+</section>
+
+<!-- RETURNING GUESTS -->
+<section class="returning" id="returning">
+  <div>
+    <p class="section-label reveal">Returning Guests</p>
+    <h2 class="section-heading reveal">Your week,<br><em>reserved.</em><br>Every year.</h2>
+    <p class="returning-body reveal">Peak summer weeks at The Tara fill fast — and returning guests get first access before we open the calendar publicly. If you've stayed with us before, or you already know you want to make this your annual summer tradition, reach out directly. We'll hold your week.</p>
+    <p class="returning-body reveal" style="margin-top:16px;">Direct bookings also save on platform service fees — for both of us.</p>
+  </div>
+  <div class="returning-form reveal">
+    <p class="form-heading">Reserve Directly</p>
+    <p class="form-sub">First right of refusal on peak weeks · No service fees</p>
+    <form action="mailto:dave@thebellairetara.com" method="POST" enctype="text/plain">
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label">First Name</label>
+          <input class="form-input" type="text" placeholder="Anne" name="firstname">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Last Name</label>
+          <input class="form-input" type="text" placeholder="Smith" name="lastname">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Email</label>
+        <input class="form-input" type="email" placeholder="anne@email.com" name="email">
+      </div>
+      <div class="form-group">
+        <label class="form-label">Phone (optional)</label>
+        <input class="form-input" type="tel" placeholder="(231) 555-0100" name="phone">
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label">Preferred Arrival</label>
+          <input class="form-input" type="text" placeholder="July 5, 2026" name="arrival">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Preferred Departure</label>
+          <input class="form-input" type="text" placeholder="July 12, 2026" name="departure">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Guests & Notes</label>
+        <textarea class="form-textarea" placeholder="e.g. 4 adults, 2 kids, 1 dog. Returning guest — we stayed July 2024." name="notes"></textarea>
+      </div>
+      <button type="submit" class="form-submit">Send Inquiry</button>
+    </form>
+    <p class="form-note">We respond within a few hours. Peak weeks (June 15 – Sept 1) book Saturday to Saturday.</p>
+  </div>
+</section>
+
+<!-- BOOK -->
+<section class="book" id="book">
+  <p class="section-label reveal">Book Your Stay</p>
+  <h2 class="section-heading reveal">Choose how you<br><em>prefer to book.</em></h2>
+  <p class="book-sub reveal">We're listed on the major platforms for your convenience. Or reach out directly — especially if you're a returning guest or want a specific week held.</p>
+  <div class="book-options reveal">
+    <a href="#returning" class="book-option">
+      <div class="book-option-icon">✉</div>
+      <div class="book-option-name">Direct</div>
+      <div class="book-option-desc">Best for returning guests & peak-week reservations. No service fees.</div>
+      <span class="book-option-link">Inquire Now</span>
+    </a>
+    <a href="https://www.airbnb.com/rooms/942041469547050838" target="_blank" class="book-option">
+      <div class="book-option-icon">⬡</div>
+      <div class="book-option-name">Airbnb</div>
+      <div class="book-option-desc">Real-time availability, instant booking, and protected payments.</div>
+      <span class="book-option-link">View on Airbnb</span>
+    </a>
+    <a href="https://www.vrbo.com" target="_blank" class="book-option">
+      <div class="book-option-icon">⬡</div>
+      <div class="book-option-name">VRBO</div>
+      <div class="book-option-desc">Preferred by many families for week-long vacation bookings.</div>
+      <span class="book-option-link">View on VRBO</span>
+    </a>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq" id="faq">
+  <div>
+    <p class="section-label reveal">Good to Know</p>
+    <h2 class="section-heading reveal">Honest<br><em>answers.</em></h2>
+    <p class="faq-body reveal">We'd rather you ask now than be surprised later. Here's everything worth knowing before you book.</p>
+  </div>
+  <ul class="faq-list reveal">
+    <li class="faq-item">
+      <div class="faq-q">What are the check-in and check-out times?</div>
+      <div class="faq-a">Check-in is after 3:00 PM, check-out by 11:00 AM. Self check-in via keypad — no need to coordinate schedules. During peak season, Saturday-to-Saturday stays are standard.</div>
+    </li>
+    <li class="faq-item">
+      <div class="faq-q">The listing shows one bathroom — is that really okay for 8 guests?</div>
+      <div class="faq-a">We hear you — and it's a fair question. The honest answer: yes, and here's why. The home has a thoughtful layout, with bedrooms spread across the house, and our guests consistently report it works beautifully. With three separate bedroom wings and a well-designed space, most groups settle into a natural rhythm. It has never been cited in a review as an issue. That said, if your group needs two bathrooms, we want you to know upfront — and it may be worth considering as you plan.</div>
+    </li>
+    <li class="faq-item">
+      <div class="faq-q">Are pets really welcome?</div>
+      <div class="faq-a">Yes, genuinely — not just technically. Dogs are welcome at The Tara. The yard, the riverfront access, and the neighborhood are great for dogs. Just let us know when you book.</div>
+    </li>
+    <li class="faq-item">
+      <div class="faq-q">Can we bring our boat or kayak?</div>
+      <div class="faq-a">Absolutely. The dock accommodates boats and we have kayaks, canoes, and paddleboards available for your use. The Intermediate River connects to Lake Bellaire and the Southern Chain of Lakes, including Torch Lake.</div>
+    </li>
+    <li class="faq-item">
+      <div class="faq-q">What's the cancellation policy?</div>
+      <div class="faq-a">Cancellation terms vary by platform. For peak season direct bookings, we use a firm policy — we'll outline terms clearly when you inquire. We're humans, not algorithms, and we work with guests when real life happens.</div>
+    </li>
+    <li class="faq-item">
+      <div class="faq-q">How far is Torch Lake?</div>
+      <div class="faq-a">About 10 minutes by car to public access. But you're also on the Intermediate River right at the house, which is connected to the chain — some guests take the kayaks all the way to Torch Lake directly from the dock.</div>
+    </li>
+    <li class="faq-item">
+      <div class="faq-q">Is the home accessible by someone with limited mobility?</div>
+      <div class="faq-a">The main living areas and one bedroom are accessible from the main level. The riverfront dock does involve steps down from the property. We're happy to walk you through specifics — just ask.</div>
+    </li>
+  </ul>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div>
+      <div class="footer-brand">The <span>Tara</span></div>
+      <div class="footer-tagline">Bellaire, Michigan · Est. 1887</div>
+      <a href="tel:+12315550000" class="footer-contact-item">📞 &nbsp;Your Google Voice Number</a>
+      <a href="mailto:dave@thebellairetara.com" class="footer-contact-item">✉ &nbsp;dave@thebellairetara.com</a>
+    </div>
+    <div>
+      <div class="footer-col-heading">Quick Links</div>
+      <ul class="footer-links">
+        <li><a href="#about">The House</a></li>
+        <li><a href="#gallery">Photo Gallery</a></li>
+        <li><a href="#amenities">Amenities</a></li>
+        <li><a href="#reviews">Guest Reviews</a></li>
+        <li><a href="#faq">FAQ & Details</a></li>
+        <li><a href="#returning">Reserve Directly</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-heading">Peak Season</div>
+      <p class="footer-season-note">
+        <strong>June 15 – September 1</strong><br>
+        Saturday to Saturday · 7-night minimum<br><br>
+        Peak weeks fill early — often by April.<br>
+        Returning guests get first access.<br><br>
+        Shoulder season (May, Sept–Oct) has<br>
+        more flexible minimums. Inquire directly.
+      </p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span class="footer-copy">© 2026 The Tara · Bellaire, Michigan</span>
+    <span class="footer-superhost">
+      <span class="superhost-badge"></span>
+      Airbnb Superhost · 4.94★ · Top 5%
+    </span>
+  </div>
+</footer>
+
+<script>
+  // NAV scroll effect
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 60);
+  });
+
+  // Scroll reveal
+  const revealEls = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        // stagger siblings
+        const siblings = entry.target.parentElement.querySelectorAll('.reveal');
+        let delay = 0;
+        siblings.forEach((sib, idx) => {
+          if (sib === entry.target) delay = idx * 80;
+        });
+        setTimeout(() => {
+          entry.target.classList.add('visible');
+        }, delay);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+  revealEls.forEach(el => observer.observe(el));
+
+  // FAQ accordion
+  document.querySelectorAll('.faq-q').forEach(q => {
+    q.addEventListener('click', () => {
+      const item = q.parentElement;
+      const wasOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+      if (!wasOpen) item.classList.add('open');
+    });
+  });
+</script>
+</body>
+</html>
