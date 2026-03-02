@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Win The Northern Michigan Experience — The Tara · Bellaire, Michigan</title>
+<meta name="description" content="Enter to win The Tara Northern Michigan Experience Package — pontoon day, Short's Brewing gift card, and a $100 booking credit. Register now.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Josefin+Sans:wght@300;400&display=swap" rel="stylesheet">
+<style>
+:root{--forest:#1a2e1e;--forest-mid:#253828;--cream:#f5f0e8;--cream-dark:#ede6d6;--brass:#b8976a;--brass-light:#d4b48a;--river-light:#7ab0c2;--text-dark:#1a1a14;--text-mid:#4a4a3a}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Josefin Sans',sans-serif;background:var(--cream);color:var(--text-dark);-webkit-font-smoothing:antialiased}
+
+/* NAV */
+nav{background:var(--forest);padding:18px 52px;display:flex;justify-content:space-between;align-items:center}
+.nav-logo{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:500;color:var(--cream);letter-spacing:.12em;text-decoration:none;display:flex;align-items:center;gap:10px}
+.nav-logo img{height:36px;width:36px;object-fit:cover;border-radius:2px;opacity:.9}
+.nav-logo span{color:var(--brass-light)}
+.nav-back{font-size:11px;font-weight:300;letter-spacing:.2em;text-transform:uppercase;color:rgba(245,240,232,.75);text-decoration:none;transition:color .2s}
+.nav-back:hover{color:var(--brass-light)}
+
+/* HERO */
+.hero{background:var(--forest);padding:88px 72px 80px;position:relative;overflow:hidden;text-align:center}
+.hero::before{content:'Win';position:absolute;top:-40px;left:50%;transform:translateX(-50%);font-family:'Cormorant Garamond',serif;font-size:320px;font-weight:300;color:rgba(184,151,106,.035);line-height:1;pointer-events:none;white-space:nowrap}
+.hero-label{font-size:10px;font-weight:400;letter-spacing:.4em;text-transform:uppercase;color:var(--brass);margin-bottom:20px;display:inline-flex;align-items:center;gap:12px}
+.hero-label::before,.hero-label::after{content:'';display:block;width:28px;height:1px;background:var(--brass)}
+.hero-title{font-family:'Cormorant Garamond',serif;font-size:clamp(42px,7vw,88px);font-weight:300;color:var(--cream);line-height:.95;margin-bottom:24px}
+.hero-title em{font-style:italic;color:var(--brass-light)}
+.hero-sub{font-size:14px;font-weight:300;color:rgba(245,240,232,.78);max-width:560px;margin:0 auto 48px;line-height:1.9;letter-spacing:.04em}
+
+/* PRIZE CARDS */
+.prize-strip{display:flex;justify-content:center;gap:2px;flex-wrap:wrap;margin-bottom:0}
+.prize-card{background:rgba(255,255,255,.06);padding:28px 32px;text-align:center;min-width:200px;flex:1;max-width:260px}
+.prize-icon{font-size:28px;margin-bottom:12px}
+.prize-value{font-family:'Cormorant Garamond',serif;font-size:32px;font-weight:300;color:var(--brass-light);margin-bottom:6px}
+.prize-desc{font-size:11px;font-weight:300;letter-spacing:.12em;text-transform:uppercase;color:rgba(245,240,232,.65);line-height:1.6}
+
+/* DRAW DATE BANNER */
+.draw-banner{background:var(--brass);padding:16px 40px;text-align:center}
+.draw-banner p{font-size:11px;font-weight:400;letter-spacing:.28em;text-transform:uppercase;color:var(--forest)}
+.draw-banner strong{font-weight:400;color:var(--forest)}
+
+/* MAIN LAYOUT */
+.main{max-width:1100px;margin:0 auto;padding:80px 52px;display:grid;grid-template-columns:1fr 480px;gap:80px;align-items:start}
+
+/* LEFT — HOW IT WORKS */
+.how-label{font-size:10px;font-weight:400;letter-spacing:.4em;text-transform:uppercase;color:var(--brass);margin-bottom:16px;display:flex;align-items:center;gap:12px}
+.how-label::after{content:'';display:block;width:28px;height:1px;background:var(--brass)}
+.how-title{font-family:'Cormorant Garamond',serif;font-size:42px;font-weight:300;color:var(--text-dark);line-height:1.1;margin-bottom:28px}
+.how-title em{font-style:italic;color:#3a5c42}
+.how-steps{display:flex;flex-direction:column;gap:28px;margin-bottom:44px}
+.how-step{display:flex;gap:20px;align-items:flex-start}
+.step-num{font-family:'Cormorant Garamond',serif;font-size:42px;font-weight:300;color:var(--brass);line-height:1;flex-shrink:0;width:40px}
+.step-body h4{font-size:11px;font-weight:400;letter-spacing:.18em;text-transform:uppercase;color:var(--text-dark);margin-bottom:6px}
+.step-body p{font-size:13px;font-weight:300;color:var(--text-mid);line-height:1.8;letter-spacing:.03em}
+.prize-detail{background:var(--forest);padding:36px;margin-bottom:0}
+.prize-detail-title{font-size:10px;font-weight:400;letter-spacing:.3em;text-transform:uppercase;color:var(--brass);margin-bottom:18px}
+.prize-items{list-style:none;display:flex;flex-direction:column;gap:14px}
+.prize-items li{display:flex;align-items:flex-start;gap:14px;font-size:13px;font-weight:300;color:rgba(245,240,232,.82);line-height:1.6;letter-spacing:.03em}
+.prize-items li span{font-size:18px;flex-shrink:0}
+.prize-total{margin-top:24px;padding-top:20px;border-top:1px solid rgba(184,151,106,.2);font-size:11px;font-weight:300;letter-spacing:.15em;text-transform:uppercase;color:var(--brass);text-align:right}
+
+/* RIGHT — FORM */
+.form-wrap{background:white;padding:48px 44px;border-top:3px solid var(--brass)}
+.form-title{font-family:'Cormorant Garamond',serif;font-size:30px;font-weight:300;color:var(--text-dark);margin-bottom:6px}
+.form-sub{font-size:12px;font-weight:300;color:var(--text-mid);letter-spacing:.06em;margin-bottom:32px;line-height:1.7}
+.f-group{margin-bottom:20px}
+.f-label{font-size:10px;font-weight:400;letter-spacing:.22em;text-transform:uppercase;color:var(--text-mid);display:block;margin-bottom:8px}
+.f-input{width:100%;border:1px solid rgba(26,46,30,.15);background:var(--cream);padding:13px 16px;font-family:'Josefin Sans',sans-serif;font-size:13px;font-weight:300;color:var(--text-dark);letter-spacing:.04em;outline:none;transition:border-color .2s}
+.f-input:focus{border-color:var(--brass)}
+.f-select{width:100%;border:1px solid rgba(26,46,30,.15);background:var(--cream);padding:13px 16px;font-family:'Josefin Sans',sans-serif;font-size:13px;font-weight:300;color:var(--text-dark);letter-spacing:.04em;outline:none;appearance:none;cursor:pointer}
+.f-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.f-check-group{display:flex;align-items:flex-start;gap:12px;margin-bottom:20px}
+.f-check-group input{margin-top:3px;accent-color:var(--forest);width:16px;height:16px;flex-shrink:0}
+.f-check-group label{font-size:12px;font-weight:300;color:var(--text-mid);line-height:1.7;letter-spacing:.03em}
+.f-btn{width:100%;background:var(--brass);color:var(--forest);font-family:'Josefin Sans',sans-serif;font-size:11px;font-weight:400;letter-spacing:.28em;text-transform:uppercase;padding:18px;border:none;cursor:pointer;transition:background .2s;margin-top:8px}
+.f-btn:hover{background:var(--brass-light)}
+.f-btn:disabled{opacity:.6;cursor:not-allowed}
+.f-fine{font-size:10px;font-weight:300;color:rgba(26,46,30,.45);letter-spacing:.06em;line-height:1.8;margin-top:16px;text-align:center}
+.form-thanks{display:none;text-align:center;padding:40px 20px}
+.form-thanks h3{font-family:'Cormorant Garamond',serif;font-size:36px;font-weight:300;color:var(--text-dark);margin-bottom:12px}
+.form-thanks p{font-size:13px;font-weight:300;color:var(--text-mid);line-height:1.8;letter-spacing:.04em;margin-bottom:24px}
+.form-thanks a{font-size:11px;font-weight:400;letter-spacing:.22em;text-transform:uppercase;color:var(--forest);border-bottom:1px solid var(--forest);text-decoration:none;padding-bottom:2px}
+
+/* FOOTER */
+footer{background:var(--forest);padding:40px 72px;display:flex;justify-content:space-between;align-items:center}
+.ft-copy{font-size:11px;font-weight:300;color:rgba(245,240,232,.45);letter-spacing:.08em}
+.ft-back{font-size:11px;font-weight:300;letter-spacing:.2em;text-transform:uppercase;color:var(--brass);text-decoration:none}
+.ft-back:hover{color:var(--brass-light)}
+
+/* MOBILE */
+@media(max-width:900px){
+  nav{padding:16px 24px}
+  .hero{padding:60px 24px 52px}
+  .prize-card{min-width:160px;padding:20px}
+  .main{grid-template-columns:1fr;gap:48px;padding:48px 24px}
+  .f-row{grid-template-columns:1fr}
+  footer{flex-direction:column;gap:16px;padding:32px 24px;text-align:center}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">
+    <img src="TaraLogo.jpg" alt="The Tara">
+    The <span>Tara</span>
+  </a>
+  <a href="index.html" class="nav-back">← Back to The Tara</a>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-label">Giveaway · Draw August 29, 2026</div>
+  <h1 class="hero-title">The Northern Michigan<br><em>Experience.</em></h1>
+  <p class="hero-sub">We're celebrating our guests — past, present, and future — with a giveaway built for Northern Michigan lovers. Register as a returning guest for your chance to win.</p>
+
+  <div class="prize-strip">
+    <div class="prize-card">
+      <div class="prize-icon">⛵</div>
+      <div class="prize-value">Full Day</div>
+      <div class="prize-desc">Pontoon rental on the Intermediate River & Lake Bellaire</div>
+    </div>
+    <div class="prize-card">
+      <div class="prize-icon">🍺</div>
+      <div class="prize-value">$50</div>
+      <div class="prize-desc">Short's Brewing Company gift card</div>
+    </div>
+    <div class="prize-card">
+      <div class="prize-icon">🏡</div>
+      <div class="prize-value">$100</div>
+      <div class="prize-desc">Credit toward your next stay at The Tara</div>
+    </div>
+  </div>
+</div>
+
+<div class="draw-banner">
+  <p>One winner drawn <strong>Labor Day Weekend — August 29, 2026</strong> · Open to all registered guests</p>
+</div>
+
+<!-- MAIN -->
+<div class="main">
+
+  <!-- LEFT -->
+  <div>
+    <p class="how-label">How to Enter</p>
+    <h2 class="how-title">Simple as a<br><em>summer morning.</em></h2>
+
+    <div class="how-steps">
+      <div class="how-step">
+        <div class="step-num">1</div>
+        <div class="step-body">
+          <h4>Register on this page</h4>
+          <p>Fill out the short form — your name, email, and a little about your connection to The Tara. Takes about 60 seconds.</p>
+        </div>
+      </div>
+      <div class="how-step">
+        <div class="step-num">2</div>
+        <div class="step-body">
+          <h4>You're entered</h4>
+          <p>One entry per person. No purchase necessary. Registering also adds you to our returning guest list — first access to peak weeks, preferred rates, and direct booking every year.</p>
+        </div>
+      </div>
+      <div class="how-step">
+        <div class="step-num">3</div>
+        <div class="step-body">
+          <h4>Winner announced Labor Day</h4>
+          <p>We'll draw one winner on August 29, 2026 and announce on Facebook. Winner will be contacted directly by Dave & Anne.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="prize-detail">
+      <p class="prize-detail-title">What You Win</p>
+      <ul class="prize-items">
+        <li><span>⛵</span><div>A full day on our pontoon — cruise the Intermediate River, anchor at the Torch Lake sandbar, or just drift on Lake Bellaire with a cooler and good company.</div></li>
+        <li><span>🍺</span><div>$50 gift card to Short's Brewing Company, right in downtown Bellaire. One of Michigan's most celebrated craft breweries — and a 7-minute walk from The Tara.</div></li>
+        <li><span>🏡</span><div>$100 credit toward any future stay at The Tara, bookable direct — no platform fees. Valid through December 2027.</div></li>
+      </ul>
+      <p class="prize-total">Total Value · $300+</p>
+    </div>
+  </div>
+
+  <!-- RIGHT — FORM -->
+  <div class="form-wrap">
+    <div id="form-thanks" class="form-thanks">
+      <h3>You're entered!</h3>
+      <p>Thank you for registering. We'll announce the winner on Labor Day weekend — August 29, 2026. Watch our Facebook page for the announcement.<br><br>You're now on our returning guest list. We'll be in touch with early access to peak weeks and preferred rates.</p>
+      <a href="https://www.facebook.com/bellairetara/" target="_blank">Follow us on Facebook →</a>
+    </div>
+
+    <form id="contest-form" action="https://formspree.io/f/xpqjegkr" method="POST">
+      <h2 class="form-title">Enter the Giveaway</h2>
+      <p class="form-sub">Register once to enter. You'll also join our returning guest list for early access and preferred rates every year.</p>
+
+      <div class="f-row">
+        <div class="f-group">
+          <label class="f-label" for="fname">First Name *</label>
+          <input class="f-input" type="text" id="fname" name="first_name" required placeholder="Anne">
+        </div>
+        <div class="f-group">
+          <label class="f-label" for="lname">Last Name *</label>
+          <input class="f-input" type="text" id="lname" name="last_name" required placeholder="Smith">
+        </div>
+      </div>
+
+      <div class="f-group">
+        <label class="f-label" for="email">Email Address *</label>
+        <input class="f-input" type="email" id="email" name="email" required placeholder="you@email.com">
+      </div>
+
+      <div class="f-group">
+        <label class="f-label" for="phone">Phone (optional)</label>
+        <input class="f-input" type="tel" id="phone" name="phone" placeholder="231.555.0000">
+      </div>
+
+      <div class="f-group">
+        <label class="f-label" for="stayed">Have you stayed at The Tara? *</label>
+        <select class="f-select f-input" id="stayed" name="stayed_before" required>
+          <option value="" disabled selected>Select one</option>
+          <option value="yes_multiple">Yes — more than once</option>
+          <option value="yes_once">Yes — once</option>
+          <option value="no_family">No — I'm family</option>
+          <option value="no_yet">Not yet — but I want to!</option>
+        </select>
+      </div>
+
+      <div class="f-group">
+        <label class="f-label" for="hear">How did you hear about The Tara?</label>
+        <select class="f-select f-input" id="hear" name="how_heard">
+          <option value="" disabled selected>Select one</option>
+          <option value="airbnb">Airbnb</option>
+          <option value="vrbo">VRBO</option>
+          <option value="facebook">Facebook</option>
+          <option value="friend">Friend or family</option>
+          <option value="google">Google search</option>
+          <option value="email">Email from Dave & Anne</option>
+          <option value="other">Other</option>
+        </select>
+      </div>
+
+      <div class="f-check-group">
+        <input type="checkbox" id="list" name="join_guest_list" value="yes" checked>
+        <label for="list">Add me to the returning guest list — I'd like early access to peak weeks and preferred rates for direct bookings.</label>
+      </div>
+
+      <div class="f-check-group">
+        <input type="checkbox" id="rules" name="agree_rules" value="yes" required>
+        <label for="rules">I agree to the contest rules. One entry per person. No purchase necessary. Winner drawn August 29, 2026. *</label>
+      </div>
+
+      <button type="submit" class="f-btn" id="contest-btn">Enter the Giveaway →</button>
+      <p class="f-fine">Your information is never shared or sold. It's used only to contact you about this giveaway and future availability at The Tara. Unsubscribe anytime.</p>
+    </form>
+  </div>
+
+</div>
+
+<footer>
+  <span class="ft-copy">© 2026 The Tara · Bellaire, Michigan · 231.431.0041 · bellairetara.com</span>
+  <a href="index.html" class="ft-back">← Back to The Tara</a>
+</footer>
+
+<script>
+const form = document.getElementById('contest-form');
+if(form){
+  form.addEventListener('submit', async function(e){
+    e.preventDefault();
+    const btn = document.getElementById('contest-btn');
+    btn.textContent = 'Entering...';
+    btn.disabled = true;
+    try {
+      const res = await fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: {Accept: 'application/json'}
+      });
+      if(res.ok){
+        form.style.display = 'none';
+        document.getElementById('form-thanks').style.display = 'block';
+        window.scrollTo({top: document.querySelector('.form-wrap').offsetTop - 40, behavior: 'smooth'});
+      } else {
+        btn.textContent = 'Enter the Giveaway →';
+        btn.disabled = false;
+        alert('Something went wrong — please try again or email us at thetara1887@gmail.com');
+      }
+    } catch(err){
+      btn.textContent = 'Enter the Giveaway →';
+      btn.disabled = false;
+      alert('Something went wrong — please try again or email us at thetara1887@gmail.com');
+    }
+  });
+}
+</script>
+
+</body>
+</html>
