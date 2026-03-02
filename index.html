@@ -337,7 +337,7 @@ footer{background:#111209;padding:64px 68px 40px}
     <li><a href="#availability">Availability</a></li>
     <li><a href="#reviews">Reviews</a></li>
     <li><a href="#faq">Details</a></li>
-    <li><a href="contest.html" style="color:var(--brass-light)!important">🎉 Win</a></li>
+    <li><a href="contest.html" style="color:var(--brass-light)!important;border-bottom:1px solid var(--brass)!important">Giveaway</a></li>
     <li><a href="#returning" class="nav-cta">Book Direct</a></li>
   </ul>
   <div class="nav-ham" id="ham"><span></span><span></span><span></span></div>
@@ -417,18 +417,6 @@ footer{background:#111209;padding:64px 68px 40px}
     <div class="intro-r-ov"></div>
   </div>
 </section>
-
-<!-- PORTAL — EXPLORE TEASER -->
-<div style="position:relative;height:60vh;min-height:420px;overflow:hidden;display:flex;align-items:center;justify-content:center">
-  <img src="Boat_Lake_Scenic.jpg" alt="Torch Lake from the water" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center">
-  <div style="position:absolute;inset:0;background:linear-gradient(to bottom, rgba(26,46,30,.2) 0%, rgba(26,46,30,.55) 60%, rgba(26,46,30,.92) 100%)"></div>
-  <div style="position:relative;z-index:2;text-align:center;padding:0 40px">
-    <p style="font-size:11px;font-weight:400;letter-spacing:.4em;text-transform:uppercase;color:var(--brass-light);margin-bottom:16px">Northern Michigan · Your Backyard</p>
-    <h2 style="font-family:'Cormorant Garamond',serif;font-size:clamp(36px,6vw,72px);font-weight:300;color:var(--cream);line-height:1;margin-bottom:20px">This is what waits<br><em style="color:var(--brass-light)">outside your door.</em></h2>
-    <p style="font-size:14px;font-weight:300;color:rgba(245,240,232,.82);letter-spacing:.08em;margin-bottom:32px;max-width:520px;margin-left:auto;margin-right:auto;line-height:1.8">Torch Lake. Glacial Hills. Short's Brewing. Four golf courses. One private dock. All within minutes of The Tara.</p>
-    <a href="#explore" style="display:inline-block;font-size:11px;font-weight:400;letter-spacing:.25em;text-transform:uppercase;color:var(--forest);background:var(--brass);padding:14px 34px;text-decoration:none">Explore the Area ↓</a>
-  </div>
-</div>
 
 <!-- PHOTO STRIP -->
 <div class="pstrip">
@@ -515,99 +503,114 @@ footer{background:#111209;padding:64px 68px 40px}
   </div>
 </section>
 
-<!-- EXPLORE MOVED UP -->
-<section style="background:var(--forest);padding:100px 72px" id="explore">
-  <div style="max-width:1200px;margin:0 auto">
-    <p class="s-label reveal" style="color:var(--brass-light)">Get Out & Explore</p>
-    <h2 class="s-head reveal" style="color:var(--cream);margin-bottom:16px">Northern Michigan<br><em style="color:var(--river-light)">from your doorstep.</em></h2>
-    <p style="font-size:15px;font-weight:300;color:rgba(245,240,232,.80);max-width:580px;line-height:1.9;margin-bottom:60px" class="reveal">The Tara sits at the center of one of Michigan's most extraordinary outdoor playgrounds. Water, trails, golf, skiing, breweries, and some of the clearest lakes in the world — all within minutes.</p>
+<!-- EXPLORE -->
+<div id="explore">
 
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:2px;margin-bottom:2px">
-
-      <!-- On the Water -->
-      <div style="background:rgba(255,255,255,.04);padding:40px 36px;border-top:2px solid var(--brass)">
-        <p style="font-size:10px;font-weight:400;letter-spacing:.3em;text-transform:uppercase;color:var(--brass);margin-bottom:18px">On the Water</p>
-        <p style="font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:300;color:var(--cream);line-height:1.5;margin-bottom:16px">Your private dock opens onto the Intermediate River — the gateway to Lake Bellaire, Torch Lake, and the entire Chain of Lakes.</p>
-        <ul style="list-style:none;font-size:13px;font-weight:300;color:rgba(245,240,232,.75);line-height:2.2;letter-spacing:.04em">
-          <li>🛶 &nbsp;Kayaks & paddleboards — included</li>
-          <li>⛵ &nbsp;Pontoon rental — ask us about rates</li>
-          <li>🏖 &nbsp;Torch Lake sandbar — 10 min by boat</li>
-          <li>🎣 &nbsp;Fishing from the dock or the boat</li>
-          <li>🌅 &nbsp;Sunset cruises up the river</li>
-        </ul>
-        <div style="margin-top:20px;padding:14px 18px;background:rgba(184,151,106,.1);border-left:2px solid var(--brass)">
-          <p style="font-size:12px;font-weight:300;color:rgba(245,240,232,.70);line-height:1.7;letter-spacing:.04em;font-style:italic">Our pontoon isn't fancy. But it'll get you to the Torch Lake sandbar, back up the river at sunset, and everywhere in between. Ask us about availability when you book.</p>
-        </div>
+  <!-- PORTAL IMAGE -->
+  <div style="position:relative;height:70vh;min-height:480px;overflow:hidden;display:flex;align-items:center;justify-content:center">
+    <img src="Boat_Lake_Scenic.jpg" alt="Torch Lake from the water" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;transform:scale(1.03)">
+    <div style="position:absolute;inset:0;background:linear-gradient(160deg, rgba(26,46,30,.1) 0%, rgba(26,46,30,.4) 45%, rgba(26,46,30,.96) 100%)"></div>
+    <!-- PORTAL FRAME -->
+    <div style="position:absolute;inset:24px;border:1px solid rgba(184,151,106,.25);pointer-events:none"></div>
+    <div style="position:absolute;inset:30px;border:1px solid rgba(184,151,106,.1);pointer-events:none"></div>
+    <div style="position:relative;z-index:2;text-align:center;padding:0 40px;max-width:800px">
+      <p style="font-size:11px;font-weight:400;letter-spacing:.5em;text-transform:uppercase;color:var(--brass-light);margin-bottom:20px;opacity:.9">Northern Michigan · Your Backyard</p>
+      <h2 style="font-family:'Cormorant Garamond',serif;font-size:clamp(44px,7vw,86px);font-weight:300;color:var(--cream);line-height:.95;margin-bottom:24px">Step outside.<br><em style="color:var(--brass-light)">It's all here.</em></h2>
+      <p style="font-size:14px;font-weight:300;color:rgba(245,240,232,.85);letter-spacing:.1em;margin-bottom:36px;line-height:1.9">Torch Lake. Glacial Hills. Short's Brewing.<br>Four golf courses. One private dock.</p>
+      <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap">
+        <a href="#explore-detail" style="display:inline-block;font-size:10px;font-weight:400;letter-spacing:.28em;text-transform:uppercase;color:var(--forest);background:var(--brass);padding:14px 32px;text-decoration:none">What's Out There ↓</a>
+        <a href="parks.html" style="display:inline-block;font-size:10px;font-weight:400;letter-spacing:.28em;text-transform:uppercase;color:var(--cream);border:1px solid rgba(245,240,232,.45);padding:14px 32px;text-decoration:none">Parks Map →</a>
       </div>
-
-      <!-- Trails & Nature -->
-      <div style="background:rgba(255,255,255,.04);padding:40px 36px;border-top:2px solid var(--brass)">
-        <p style="font-size:10px;font-weight:400;letter-spacing:.3em;text-transform:uppercase;color:var(--brass);margin-bottom:18px">Trails & Nature</p>
-        <p style="font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:300;color:var(--cream);line-height:1.5;margin-bottom:16px">Some of Michigan's best trails and natural areas are right outside Bellaire.</p>
-        <ul style="list-style:none;font-size:13px;font-weight:300;color:rgba(245,240,232,.75);line-height:2.2;letter-spacing:.04em">
-          <li>🚵 &nbsp;Glacial Hills Pathway — 31 mi of MTB & hiking · 15 min</li>
-          <li>🌿 &nbsp;Grass River Natural Area — boardwalks & birding · 10 min</li>
-          <li>🌲 &nbsp;Cedar River Nat'l Area — kayaking & trails · 15 min</li>
-          <li>❄️ &nbsp;Nordic skiing & snowshoeing at Glacial Hills · winter</li>
-          <li>🗺 &nbsp;20+ parks & preserves within 20 miles</li>
-        </ul>
-        <a href="parks.html" style="display:inline-flex;align-items:center;gap:8px;margin-top:20px;font-size:11px;font-weight:400;letter-spacing:.2em;text-transform:uppercase;color:var(--brass-light);text-decoration:none;border-bottom:1px solid rgba(184,151,106,.3);padding-bottom:3px">View Parks Map →</a>
-      </div>
-
-      <!-- Golf & Winter -->
-      <div style="background:rgba(255,255,255,.04);padding:40px 36px;border-top:2px solid var(--brass)">
-        <p style="font-size:10px;font-weight:400;letter-spacing:.3em;text-transform:uppercase;color:var(--brass);margin-bottom:18px">Golf & Winter Sports</p>
-        <p style="font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:300;color:var(--cream);line-height:1.5;margin-bottom:16px">Four championship courses and a full ski resort — 12 minutes from your front door.</p>
-        <ul style="list-style:none;font-size:13px;font-weight:300;color:rgba(245,240,232,.75);line-height:2.2;letter-spacing:.04em">
-          <li>⛳ &nbsp;Shanty Creek — The Legend, The Chief, Hawk's Eye, The Farm</li>
-          <li>⛳ &nbsp;A-Ga-Ming Golf Resort · 20 min</li>
-          <li>⛳ &nbsp;Elk Rapids Golf Club · 20 min</li>
-          <li>⛷️ &nbsp;Schuss Mountain skiing & snowboarding · 12 min</li>
-          <li>🎿 &nbsp;Snow tubing, terrain parks, 48km Nordic trails</li>
-        </ul>
-      </div>
-
-      <!-- In Town -->
-      <div style="background:rgba(255,255,255,.04);padding:40px 36px;border-top:2px solid var(--brass)">
-        <p style="font-size:10px;font-weight:400;letter-spacing:.3em;text-transform:uppercase;color:var(--brass);margin-bottom:18px">In Town · Walk There</p>
-        <p style="font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:300;color:var(--cream);line-height:1.5;margin-bottom:16px">Downtown Bellaire is steps away. You genuinely don't need a car once you're here.</p>
-        <ul style="list-style:none;font-size:13px;font-weight:300;color:rgba(245,240,232,.75);line-height:2.2;letter-spacing:.04em">
-          <li>🍺 &nbsp;Short's Brewing Company — walk</li>
-          <li>🥃 &nbsp;Mammoth Distilling — walk</li>
-          <li>🍎 &nbsp;Bee Well Cider & Meadery — walk</li>
-          <li>🛍 &nbsp;Bellaire shops & restaurants — 2 min</li>
-          <li>🎬 &nbsp;Bellaire movie theatre — 2 min</li>
-        </ul>
-      </div>
-
-      <!-- Day Trips -->
-      <div style="background:rgba(255,255,255,.04);padding:40px 36px;border-top:2px solid var(--brass)">
-        <p style="font-size:10px;font-weight:400;letter-spacing:.3em;text-transform:uppercase;color:var(--brass);margin-bottom:18px">Day Trips</p>
-        <p style="font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:300;color:var(--cream);line-height:1.5;margin-bottom:16px">Northern Michigan's greatest hits are all within reach — make The Tara your base.</p>
-        <ul style="list-style:none;font-size:13px;font-weight:300;color:rgba(245,240,232,.75);line-height:2.2;letter-spacing:.04em">
-          <li>🍷 &nbsp;Traverse City wine & cherry country · 45 min</li>
-          <li>⚓ &nbsp;Charlevoix · 30 min</li>
-          <li>🪨 &nbsp;Petoskey stones on Lake Michigan · 45 min</li>
-          <li>🏝 &nbsp;Mackinac Island ferry · 90 min</li>
-          <li>🍒 &nbsp;Chateau Grand Traverse winery · 40 min</li>
-        </ul>
-      </div>
-
-      <!-- Parks of Paradise teaser -->
-      <div style="background:var(--brass);padding:40px 36px;display:flex;flex-direction:column;justify-content:space-between">
-        <div>
-          <p style="font-size:10px;font-weight:400;letter-spacing:.3em;text-transform:uppercase;color:var(--forest);margin-bottom:18px">Parks of Paradise</p>
-          <p style="font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:300;color:var(--forest);line-height:1.3;margin-bottom:16px">20+ parks, preserves & natural areas within reach of The Tara.</p>
-          <p style="font-size:13px;font-weight:300;color:rgba(26,46,30,.75);line-height:1.8">From Grass River to Torch Lake, from Glacial Hills to Grand Traverse Bay — Northern Michigan's natural treasures mapped for you.</p>
-        </div>
-        <a href="parks.html" style="display:inline-flex;align-items:center;gap:10px;margin-top:28px;font-size:11px;font-weight:400;letter-spacing:.22em;text-transform:uppercase;color:var(--forest);text-decoration:none;border-bottom:2px solid var(--forest);padding-bottom:4px;width:fit-content">View the Map →</a>
-      </div>
-
     </div>
   </div>
-</section>
 
-<!-- AVAILABILITY -->
+  <!-- DETAIL CARDS -->
+  <section style="background:var(--forest);padding:80px 72px" id="explore-detail">
+    <div style="max-width:1200px;margin:0 auto">
+      <p class="s-label reveal" style="color:var(--brass-light)">Adventures from The Tara</p>
+      <h2 style="font-family:'Cormorant Garamond',serif;font-size:clamp(36px,5vw,62px);font-weight:300;color:var(--cream);line-height:1;margin-bottom:48px" class="reveal">Your week,<br><em style="color:var(--river-light)">written in water and trail.</em></h2>
+
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:2px;margin-bottom:2px">
+
+        <div style="background:rgba(255,255,255,.04);padding:40px 36px;border-top:2px solid var(--brass)">
+          <p style="font-size:10px;font-weight:400;letter-spacing:.3em;text-transform:uppercase;color:var(--brass);margin-bottom:18px">On the Water</p>
+          <p style="font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:300;color:var(--cream);line-height:1.5;margin-bottom:16px">Your private dock opens onto the Intermediate River — the gateway to Lake Bellaire, Torch Lake, and the entire Chain of Lakes.</p>
+          <ul style="list-style:none;font-size:13px;font-weight:300;color:rgba(245,240,232,.75);line-height:2.2;letter-spacing:.04em">
+            <li>🛶 &nbsp;Kayaks & paddleboards — included</li>
+            <li>⛵ &nbsp;Pontoon rental — ask us about rates</li>
+            <li>🏖 &nbsp;Torch Lake sandbar — 10 min by boat</li>
+            <li>🎣 &nbsp;Fishing from the dock or the boat</li>
+            <li>🌅 &nbsp;Sunset cruises up the river</li>
+          </ul>
+          <div style="margin-top:20px;padding:14px 18px;background:rgba(184,151,106,.1);border-left:2px solid var(--brass)">
+            <p style="font-size:12px;font-weight:300;color:rgba(245,240,232,.70);line-height:1.7;letter-spacing:.04em;font-style:italic">Our pontoon isn't fancy. But it'll get you to the Torch Lake sandbar, back up the river at sunset, and everywhere in between. Ask us about availability when you book.</p>
+          </div>
+        </div>
+
+        <div style="background:rgba(255,255,255,.04);padding:40px 36px;border-top:2px solid var(--brass)">
+          <p style="font-size:10px;font-weight:400;letter-spacing:.3em;text-transform:uppercase;color:var(--brass);margin-bottom:18px">Trails & Nature</p>
+          <p style="font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:300;color:var(--cream);line-height:1.5;margin-bottom:16px">Some of Michigan's best trails and natural areas are right outside Bellaire.</p>
+          <ul style="list-style:none;font-size:13px;font-weight:300;color:rgba(245,240,232,.75);line-height:2.2;letter-spacing:.04em">
+            <li>🚵 &nbsp;Glacial Hills Pathway — 31 mi MTB & hiking · 15 min</li>
+            <li>🌿 &nbsp;Grass River Natural Area — boardwalks & birding · 10 min</li>
+            <li>🌲 &nbsp;Cedar River Natural Area — kayak & trails · 15 min</li>
+            <li>❄️ &nbsp;Nordic skiing & snowshoeing at Glacial Hills</li>
+            <li>🗺 &nbsp;20+ parks & preserves within 20 miles</li>
+          </ul>
+          <a href="parks.html" style="display:inline-flex;align-items:center;gap:8px;margin-top:20px;font-size:11px;font-weight:400;letter-spacing:.2em;text-transform:uppercase;color:var(--brass-light);text-decoration:none;border-bottom:1px solid rgba(184,151,106,.3);padding-bottom:3px">View Parks Map →</a>
+        </div>
+
+        <div style="background:rgba(255,255,255,.04);padding:40px 36px;border-top:2px solid var(--brass)">
+          <p style="font-size:10px;font-weight:400;letter-spacing:.3em;text-transform:uppercase;color:var(--brass);margin-bottom:18px">Golf & Winter Sports</p>
+          <p style="font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:300;color:var(--cream);line-height:1.5;margin-bottom:16px">Four championship courses and a full ski resort — 12 minutes from your front door.</p>
+          <ul style="list-style:none;font-size:13px;font-weight:300;color:rgba(245,240,232,.75);line-height:2.2;letter-spacing:.04em">
+            <li>⛳ &nbsp;Shanty Creek — The Legend, The Chief, Hawk's Eye, The Farm</li>
+            <li>⛳ &nbsp;A-Ga-Ming Golf Resort · 20 min</li>
+            <li>⛳ &nbsp;Elk Rapids Golf Club · 20 min</li>
+            <li>⛷️ &nbsp;Schuss Mountain skiing & snowboarding · 12 min</li>
+            <li>🎿 &nbsp;Snow tubing, terrain parks, 48km Nordic trails</li>
+          </ul>
+        </div>
+
+        <div style="background:rgba(255,255,255,.04);padding:40px 36px;border-top:2px solid var(--brass)">
+          <p style="font-size:10px;font-weight:400;letter-spacing:.3em;text-transform:uppercase;color:var(--brass);margin-bottom:18px">In Town · Walk There</p>
+          <p style="font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:300;color:var(--cream);line-height:1.5;margin-bottom:16px">Downtown Bellaire is steps away. You genuinely don't need a car once you're here.</p>
+          <ul style="list-style:none;font-size:13px;font-weight:300;color:rgba(245,240,232,.75);line-height:2.2;letter-spacing:.04em">
+            <li>🍺 &nbsp;Short's Brewing Company — walk</li>
+            <li>🥃 &nbsp;Mammoth Distilling — walk</li>
+            <li>🍎 &nbsp;Bee Well Cider & Meadery — walk</li>
+            <li>🛍 &nbsp;Bellaire shops & restaurants — 2 min</li>
+            <li>🎬 &nbsp;Bellaire movie theatre — 2 min</li>
+          </ul>
+        </div>
+
+        <div style="background:rgba(255,255,255,.04);padding:40px 36px;border-top:2px solid var(--brass)">
+          <p style="font-size:10px;font-weight:400;letter-spacing:.3em;text-transform:uppercase;color:var(--brass);margin-bottom:18px">Day Trips</p>
+          <p style="font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:300;color:var(--cream);line-height:1.5;margin-bottom:16px">Northern Michigan's greatest hits — all within reach. Make The Tara your base.</p>
+          <ul style="list-style:none;font-size:13px;font-weight:300;color:rgba(245,240,232,.75);line-height:2.2;letter-spacing:.04em">
+            <li>🍷 &nbsp;Traverse City wine & cherry country · 45 min</li>
+            <li>⚓ &nbsp;Charlevoix · 30 min</li>
+            <li>🪨 &nbsp;Petoskey stones on Lake Michigan · 45 min</li>
+            <li>🏝 &nbsp;Mackinac Island ferry · 90 min</li>
+            <li>🍒 &nbsp;Chateau Grand Traverse winery · 40 min</li>
+          </ul>
+        </div>
+
+        <div style="background:var(--brass);padding:40px 36px;display:flex;flex-direction:column;justify-content:space-between">
+          <div>
+            <p style="font-size:10px;font-weight:400;letter-spacing:.3em;text-transform:uppercase;color:var(--forest);margin-bottom:18px">Parks of Paradise</p>
+            <p style="font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:300;color:var(--forest);line-height:1.3;margin-bottom:16px">20+ parks, preserves & natural areas within reach of The Tara.</p>
+            <p style="font-size:13px;font-weight:300;color:rgba(26,46,30,.75);line-height:1.8">From Grass River to Torch Lake, from Glacial Hills to Grand Traverse Bay — Northern Michigan's natural treasures mapped for you.</p>
+          </div>
+          <a href="parks.html" style="display:inline-flex;align-items:center;gap:10px;margin-top:28px;font-size:11px;font-weight:400;letter-spacing:.22em;text-transform:uppercase;color:var(--forest);text-decoration:none;border-bottom:2px solid var(--forest);padding-bottom:4px;width:fit-content">View the Map →</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+</div>
+
+
 <section class="cal-sec" id="availability">
   <div class="cal-inner">
     <div>
