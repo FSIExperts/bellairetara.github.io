@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Parks of Paradise — The Tara · Bellaire, Michigan</title>
+<meta name="description" content="20+ public parks, natural areas, and access sites near The Tara in Bellaire, Michigan. Grass River, Glacial Hills, Torch Lake, and more.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Josefin+Sans:wght@300;400&display=swap" rel="stylesheet">
+<style>
+:root{--forest:#1a2e1e;--cream:#f5f0e8;--cream-dark:#ede6d6;--brass:#b8976a;--brass-light:#d4b48a;--text-dark:#1a1a14;--text-mid:#4a4a3a}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Josefin Sans',sans-serif;background:var(--cream);color:var(--text-dark);-webkit-font-smoothing:antialiased}
+
+/* NAV */
+nav{background:var(--forest);padding:18px 52px;display:flex;justify-content:space-between;align-items:center}
+.nav-logo{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:500;color:var(--cream);letter-spacing:.12em;text-decoration:none}
+.nav-logo span{color:var(--brass-light)}
+.nav-back{font-size:11px;font-weight:300;letter-spacing:.2em;text-transform:uppercase;color:rgba(245,240,232,.75);text-decoration:none;display:flex;align-items:center;gap:8px;transition:color .2s}
+.nav-back:hover{color:var(--brass-light)}
+
+/* HERO */
+.page-hero{background:var(--forest);padding:72px 72px 60px;position:relative;overflow:hidden}
+.page-hero::before{content:'Parks of Paradise';position:absolute;top:-20px;right:-40px;font-family:'Cormorant Garamond',serif;font-size:160px;font-weight:300;color:rgba(184,151,106,.04);line-height:1;pointer-events:none;white-space:nowrap}
+.hero-label{font-size:10px;font-weight:400;letter-spacing:.4em;text-transform:uppercase;color:var(--brass);margin-bottom:16px;display:flex;align-items:center;gap:12px}
+.hero-label::after{content:'';display:block;width:34px;height:1px;background:var(--brass)}
+.hero-title{font-family:'Cormorant Garamond',serif;font-size:clamp(42px,6vw,80px);font-weight:300;color:var(--cream);line-height:1;margin-bottom:20px}
+.hero-title em{font-style:italic;color:var(--brass-light)}
+.hero-sub{font-size:14px;font-weight:300;color:rgba(245,240,232,.75);max-width:560px;line-height:1.9;letter-spacing:.04em}
+
+/* MAIN CONTENT */
+.content{max-width:1200px;margin:0 auto;padding:72px 52px}
+
+/* MAP SECTION */
+.map-section{display:grid;grid-template-columns:1fr 420px;gap:60px;align-items:start;margin-bottom:80px}
+.map-container{position:relative}
+.map-container img{width:100%;border:4px solid var(--forest);display:block}
+.map-badge{position:absolute;top:20px;left:20px;background:var(--forest);color:var(--cream);padding:10px 18px;font-size:10px;font-weight:400;letter-spacing:.2em;text-transform:uppercase}
+.map-caption{margin-top:12px;font-size:11px;font-weight:300;color:var(--text-mid);letter-spacing:.08em;line-height:1.6;text-align:center}
+.map-info{display:flex;flex-direction:column;gap:28px}
+.map-info-title{font-family:'Cormorant Garamond',serif;font-size:36px;font-weight:300;line-height:1.2;color:var(--text-dark);margin-bottom:8px}
+.map-info-title em{font-style:italic;color:#3a5c42}
+.map-info-body{font-size:14px;font-weight:300;line-height:1.9;color:var(--text-mid)}
+
+/* PARKS GRID */
+.parks-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:2px;margin-bottom:72px}
+.park-cat{background:white;padding:32px 28px;border-top:3px solid var(--brass)}
+.park-cat-title{font-size:10px;font-weight:400;letter-spacing:.3em;text-transform:uppercase;color:var(--brass);margin-bottom:16px}
+.park-cat h3{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:300;color:var(--text-dark);margin-bottom:14px;line-height:1.3}
+.park-list{list-style:none;font-size:13px;font-weight:300;color:var(--text-mid);line-height:2.2;letter-spacing:.03em}
+.park-list li::before{content:'→ ';color:var(--brass);font-size:11px}
+
+/* PRINT CALLOUT */
+.print-callout{background:var(--forest);padding:52px 60px;display:flex;justify-content:space-between;align-items:center;gap:40px;margin-bottom:72px}
+.print-text h3{font-family:'Cormorant Garamond',serif;font-size:32px;font-weight:300;color:var(--cream);margin-bottom:10px}
+.print-text p{font-size:13px;font-weight:300;color:rgba(245,240,232,.72);line-height:1.8;max-width:480px;letter-spacing:.04em}
+.print-btn{display:inline-flex;align-items:center;gap:10px;background:var(--brass);color:var(--forest);font-family:'Josefin Sans',sans-serif;font-size:11px;font-weight:400;letter-spacing:.22em;text-transform:uppercase;padding:16px 32px;text-decoration:none;white-space:nowrap;cursor:pointer;border:none;transition:background .2s}
+.print-btn:hover{background:var(--brass-light)}
+
+/* FOOTER */
+footer{background:var(--forest);padding:40px 72px;display:flex;justify-content:space-between;align-items:center}
+.ft-copy{font-size:11px;font-weight:300;color:rgba(245,240,232,.45);letter-spacing:.08em}
+.ft-back{font-size:11px;font-weight:300;letter-spacing:.2em;text-transform:uppercase;color:var(--brass);text-decoration:none}
+.ft-back:hover{color:var(--brass-light)}
+
+/* MOBILE */
+@media(max-width:768px){
+  nav{padding:16px 24px}
+  .page-hero{padding:48px 24px 40px}
+  .content{padding:48px 24px}
+  .map-section{grid-template-columns:1fr;gap:36px}
+  .print-callout{flex-direction:column;padding:36px 28px;text-align:center}
+  footer{flex-direction:column;gap:16px;padding:32px 24px;text-align:center}
+}
+
+@media print{
+  nav, .print-callout, footer, .nav-back{display:none!important}
+  .page-hero{padding:20px;background:white!important}
+  .hero-title, .hero-sub, .hero-label{color:black!important}
+  .content{padding:20px}
+  body{background:white}
+  .map-container img{border:1px solid #ccc}
+  .parks-grid{break-inside:avoid}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo"><img src="TaraLogo.jpg" alt="The Tara" style="height:38px;width:38px;object-fit:cover;border-radius:2px;margin-right:10px;vertical-align:middle;opacity:.9">The <span>Tara</span></a>
+  <a href="index.html" class="nav-back">← Back to The Tara</a>
+</nav>
+
+<div class="page-hero">
+  <div class="hero-label">The Tara · Bellaire, Michigan</div>
+  <h1 class="hero-title">Parks of <em>Paradise.</em></h1>
+  <p class="hero-sub">Twenty-plus public parks, natural areas, and water access sites within reach of your front door. Northern Michigan's outdoors, mapped for you.</p>
+</div>
+
+<div class="content">
+
+  <!-- MAP + INTRO -->
+  <div class="map-section">
+    <div class="map-container">
+      <img src="parks_map.jpg" alt="Public Parks, Natural Areas, and Access Sites near Bellaire Michigan">
+      <div class="map-badge">The Tara · Bellaire, MI</div>
+      <p class="map-caption">Public Parks, Natural Areas & Access Sites · Antrim County, Michigan · Michigan GeoRef</p>
+    </div>
+    <div class="map-info">
+      <div>
+        <h2 class="map-info-title">Your base camp for <em>Northern Michigan.</em></h2>
+        <p class="map-info-body">The Tara sits at the heart of one of Michigan's most park-rich regions. The Intermediate River — your private dock — connects to Lake Bellaire, then Torch Lake, then the entire Chain of Lakes. On land, trails, preserves, and natural areas ring the area in every direction.</p>
+      </div>
+      <div style="background:var(--cream-dark);padding:24px 28px;border-left:3px solid var(--brass)">
+        <p style="font-size:10px;font-weight:400;letter-spacing:.3em;text-transform:uppercase;color:var(--brass);margin-bottom:10px">By the numbers</p>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+          <div><div style="font-family:'Cormorant Garamond',serif;font-size:36px;font-weight:300;color:var(--text-dark)">20+</div><div style="font-size:11px;font-weight:300;letter-spacing:.1em;color:var(--text-mid)">Parks & Preserves</div></div>
+          <div><div style="font-family:'Cormorant Garamond',serif;font-size:36px;font-weight:300;color:var(--text-dark)">31mi</div><div style="font-size:11px;font-weight:300;letter-spacing:.1em;color:var(--text-mid)">Glacial Hills Trails</div></div>
+          <div><div style="font-family:'Cormorant Garamond',serif;font-size:36px;font-weight:300;color:var(--text-dark)">7mi</div><div style="font-size:11px;font-weight:300;letter-spacing:.1em;color:var(--text-mid)">To Torch Lake</div></div>
+          <div><div style="font-family:'Cormorant Garamond',serif;font-size:36px;font-weight:300;color:var(--text-dark)">Steps</div><div style="font-size:11px;font-weight:300;letter-spacing:.1em;color:var(--text-mid)">To Your Dock</div></div>
+        </div>
+      </div>
+      <div>
+        <p style="font-size:10px;font-weight:400;letter-spacing:.3em;text-transform:uppercase;color:var(--brass);margin-bottom:12px">From your dock</p>
+        <p class="map-info-body">Your private dock on the Intermediate River gives you direct water access to Lake Bellaire, then by boat to Torch Lake and the Clam River chain — one of the most beautiful freshwater systems in the Midwest. Kayaks and paddleboards included. Pontoon available to rent.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- PARKS BY CATEGORY -->
+  <p style="font-size:10px;font-weight:400;letter-spacing:.4em;text-transform:uppercase;color:var(--brass);margin-bottom:32px;display:flex;align-items:center;gap:12px">Highlights by Category <span style="display:block;width:34px;height:1px;background:var(--brass)"></span></p>
+
+  <div class="parks-grid">
+    <div class="park-cat">
+      <div class="park-cat-title">Water Access</div>
+      <h3>Lakes, Rivers & Sandbar Access</h3>
+      <ul class="park-list">
+        <li>Intermediate River — your dock (steps)</li>
+        <li>Lake Bellaire public access · 3 min</li>
+        <li>Torch Lake sandbar · 10 min by boat</li>
+        <li>Grass River Natural Area · 10 min</li>
+        <li>Clam Lake water access · 15 min</li>
+        <li>Elk Lake · 20 min</li>
+        <li>Grand Traverse Bay · 25 min</li>
+      </ul>
+    </div>
+    <div class="park-cat">
+      <div class="park-cat-title">Trails & Biking</div>
+      <h3>Hiking, MTB & Nordic Trails</h3>
+      <ul class="park-list">
+        <li>Glacial Hills Pathway — 31mi · 15 min</li>
+        <li>Cedar River Natural Area · 15 min</li>
+        <li>Grass River boardwalk trail · 10 min</li>
+        <li>Antrim Creek Natural Area · 20 min</li>
+        <li>Kewadin Wetlands Natural Area · 20 min</li>
+        <li>Shanty Creek Nordic trails · 12 min</li>
+        <li>N. Skegemog Nature Preserve · 25 min</li>
+      </ul>
+    </div>
+    <div class="park-cat">
+      <div class="park-cat-title">Natural Preserves</div>
+      <h3>Protected Lands & Wildlife</h3>
+      <ul class="park-list">
+        <li>Grass River Natural Area</li>
+        <li>Bauer Preserve</li>
+        <li>Craven Park</li>
+        <li>Richardi Park</li>
+        <li>Custer Township Park</li>
+        <li>Clearwater Township Freedom Park</li>
+        <li>Palastra-Holm Preserve</li>
+      </ul>
+    </div>
+    <div class="park-cat">
+      <div class="park-cat-title">Day Trips</div>
+      <h3>Beyond Bellaire</h3>
+      <ul class="park-list">
+        <li>Traverse City & wineries · 45 min</li>
+        <li>Charlevoix · 30 min</li>
+        <li>Lighthouse State Park · 30 min</li>
+        <li>Petoskey & Lake Michigan · 45 min</li>
+        <li>Haserot Beach Township Park · 30 min</li>
+        <li>Bower's Harbor Township Park · 35 min</li>
+        <li>Mackinac Island ferry · 90 min</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- PRINT CALLOUT -->
+  <div class="print-callout">
+    <div class="print-text">
+      <h3>Take the map with you.</h3>
+      <p>Print this page for a full-size parks reference to use during your stay. We keep a copy inside The Tara as well — ask us for local recommendations anytime.</p>
+    </div>
+    <button class="print-btn" onclick="window.print()">🖨 &nbsp;Print This Page</button>
+  </div>
+
+  <!-- CTA -->
+  <div style="text-align:center;padding:20px 0 40px">
+    <p style="font-family:'Cormorant Garamond',serif;font-size:32px;font-weight:300;color:var(--text-dark);margin-bottom:16px">Ready to explore?</p>
+    <p style="font-size:14px;font-weight:300;color:var(--text-mid);margin-bottom:28px;letter-spacing:.04em">All of this starts from your private dock on the Intermediate River.</p>
+    <a href="index.html#returning" style="display:inline-block;background:var(--brass);color:var(--forest);font-family:'Josefin Sans',sans-serif;font-size:11px;font-weight:400;letter-spacing:.25em;text-transform:uppercase;padding:16px 38px;text-decoration:none">Reserve Your Week</a>
+  </div>
+
+</div>
+
+<footer>
+  <span class="ft-copy">© 2026 The Tara · Bellaire, Michigan · 315 Seneca St · 231.431.0041</span>
+  <a href="index.html" class="ft-back">← Back to The Tara</a>
+</footer>
+
+</body>
+</html>
