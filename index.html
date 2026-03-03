@@ -104,8 +104,8 @@ section{position:relative}
 .callout::before{content:'';position:absolute;top:0;left:0;width:3px;height:100%;background:var(--brass)}
 .callout-t{font-family:'Cormorant Garamond',serif;font-size:23px;font-weight:300;font-style:italic;line-height:1.56;color:var(--cream)}
 .callout-a{font-size:10px;font-weight:300;letter-spacing:.25em;text-transform:uppercase;color:var(--brass);margin-top:18px}
-.map-wrap{overflow:hidden;height:272px;border:1px solid rgba(26,46,30,.09)}
-.map-wrap iframe{width:100%;height:100%;border:0;display:block;filter:grayscale(.25) contrast(1.05)}
+.map-wrap{overflow:hidden;border:1px solid rgba(26,46,30,.09)}
+.map-wrap iframe{width:100%;height:272px;border:0;display:block;filter:grayscale(.25) contrast(1.05)}
 
 /* GALLERY */
 .gallery{padding:92px 68px;background:var(--cream)}
@@ -558,14 +558,12 @@ footer{background:#111209;padding:64px 68px 40px}
           <circle cx="335" cy="218" r="3.5" class="poi-dot"/>
           <text x="335" y="212" text-anchor="middle" class="lbl-sm">Courthouse</text>
 
-          <!-- THE TARA — red dot, prominent -->
-          <circle cx="175" cy="230" r="16" fill="#c0392b" opacity="0.2"/>
-          <circle cx="175" cy="230" r="10" fill="#c0392b" opacity="0.4"/>
-          <circle cx="175" cy="230" r="6" fill="#e74c3c"/>
+          <!-- THE TARA — gold pin -->
+          <circle cx="175" cy="230" r="16" fill="#b8976a" opacity="0.2"/>
+          <circle cx="175" cy="230" r="10" fill="#b8976a" opacity="0.5"/>
+          <circle cx="175" cy="230" r="6" fill="#d4b48a"/>
           <circle cx="175" cy="230" r="3" fill="#f5f0e8"/>
-          <!-- Pin tail -->
-          <line x1="175" x2="175" y1="236" y2="248" stroke="#e74c3c" stroke-width="2"/>
-          <!-- Label -->
+          <line x1="175" x2="175" y1="236" y2="248" stroke="#d4b48a" stroke-width="2"/>
           <rect x="120" y="248" width="110" height="22" fill="#b8976a" rx="2" opacity="0.9"/>
           <text x="175" y="263" text-anchor="middle" fill="#1a2e1e" font-size="9" font-weight="bold" font-family="Arial" letter-spacing="0.5">THE TARA · 315 SENECA</text>
 
@@ -745,8 +743,8 @@ footer{background:#111209;padding:64px 68px 40px}
             <p style="font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:300;color:var(--cream);line-height:1.4;margin-bottom:4px">315 Seneca St · Bellaire, MI</p>
             <p style="font-size:12px;font-weight:300;color:rgba(245,240,232,.55);letter-spacing:.06em">7 min walk to Short's · Steps to the river</p>
           </div>
-          <div style="flex:1;min-height:220px">
-            <iframe src="https://maps.google.com/maps?q=315+Seneca+St,+Bellaire,+MI+49615&t=&z=15&ie=UTF8&iwloc=&output=embed" width="100%" height="100%" style="border:0;display:block;min-height:220px;filter:grayscale(.3) contrast(1.1)" allowfullscreen="" loading="lazy"></iframe>
+          <div style="height:220px">
+            <iframe src="https://maps.google.com/maps?q=315+Seneca+St,+Bellaire,+MI+49615&t=&z=15&ie=UTF8&iwloc=&output=embed" width="100%" height="220" style="border:0;display:block;filter:grayscale(.3) contrast(1.1)" allowfullscreen="" loading="lazy"></iframe>
           </div>
           <a href="https://maps.google.com/maps?q=315+Seneca+St,+Bellaire,+MI+49615" target="_blank" style="display:block;padding:12px 36px;font-size:10px;font-weight:400;letter-spacing:.22em;text-transform:uppercase;color:var(--brass);text-decoration:none;border-top:1px solid rgba(184,151,106,.2)">Get Directions →</a>
         </div>
