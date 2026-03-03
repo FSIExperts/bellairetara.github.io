@@ -448,137 +448,99 @@ footer{background:#111209;padding:64px 68px 40px}
       <p class="callout-a">— Verified Guest · 5-Star Review</p>
     </div>
     <div class="map-wrap reveal">
-      <div style="background:#1a2e1e;position:relative;overflow:hidden;border:2px solid rgba(184,151,106,.3)">
-        <svg viewBox="0 0 420 340" xmlns="http://www.w3.org/2000/svg" style="width:100%;display:block">
-          <defs>
-            <style>
-              .st { font-family: Arial, sans-serif; }
-              .road { stroke: rgba(245,240,232,.18); stroke-width: 2.5; fill: none; }
-              .road-sm { stroke: rgba(245,240,232,.1); stroke-width: 1.5; fill: none; }
-              .water { fill: #4a7a8a; opacity: 0.55; }
-              .water-lbl { fill: #7ab0c2; font-size: 8px; font-style: italic; font-family: Arial; }
-              .lbl { fill: rgba(245,240,232,.55); font-size: 8px; font-family: Arial; }
-              .lbl-sm { fill: rgba(245,240,232,.35); font-size: 7px; font-family: Arial; }
-              .street { fill: rgba(245,240,232,.28); font-size: 6.5px; font-family: Arial; letter-spacing: 0.5px; }
-              .poi { fill: #b8976a; font-size: 7.5px; font-family: Arial; }
-              .poi-dot { fill: rgba(184,151,106,.7); }
-              .tree { fill: #253828; }
-            </style>
-          </defs>
+      <div style="background:#1a2e1e;border:2px solid rgba(184,151,106,.3)">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" style="width:100%;height:auto;display:block">
 
-          <!-- Background -->
-          <rect width="420" height="340" fill="#1a2e1e"/>
+          <!-- BG -->
+          <rect width="400" height="300" fill="#1c3020"/>
 
-          <!-- Tree/green areas — west side (Seneca triangle woods) -->
-          <rect x="0" y="60" width="195" height="220" fill="#1f3322" rx="2"/>
-          <!-- Tree texture dots -->
-          <circle cx="40" cy="100" r="18" fill="#243b28"/><circle cx="80" cy="85" r="14" fill="#223628"/>
-          <circle cx="120" cy="110" r="16" fill="#243b28"/><circle cx="55" cy="140" r="12" fill="#223628"/>
-          <circle cx="100" cy="155" r="15" fill="#243b28"/><circle cx="145" cy="130" r="11" fill="#223628"/>
-          <circle cx="70" cy="200" r="13" fill="#243b28"/><circle cx="30" cy="220" r="10" fill="#223628"/>
-          <circle cx="115" cy="210" r="14" fill="#243b28"/><circle cx="160" cy="185" r="10" fill="#223628"/>
-          <circle cx="50" cy="255" r="12" fill="#243b28"/><circle cx="90" cy="240" r="11" fill="#223628"/>
+          <!-- WOODED TRIANGLE — Seneca St west side -->
+          <polygon points="0,0 180,0 140,230 0,230" fill="#1a2c1e"/>
+          <circle cx="30" cy="40" r="22" fill="#1e3322"/><circle cx="75" cy="30" r="18" fill="#1f3424"/>
+          <circle cx="120" cy="50" r="20" fill="#1e3322"/><circle cx="55" cy="90" r="16" fill="#1f3424"/>
+          <circle cx="100" cy="100" r="18" fill="#1e3322"/><circle cx="30" cy="130" r="14" fill="#1f3424"/>
+          <circle cx="80" cy="150" r="17" fill="#1e3322"/><circle cx="130" cy="130" r="13" fill="#1f3424"/>
+          <circle cx="50" cy="185" r="15" fill="#1e3322"/><circle cx="105" cy="175" r="12" fill="#1f3424"/>
 
-          <!-- River — runs horizontally behind The Tara (lower portion) -->
-          <path d="M 0 295 Q 60 288 120 292 Q 160 296 200 290 Q 240 284 280 288 Q 330 293 380 287 Q 400 285 420 287" 
-                stroke="#4a7a8a" stroke-width="18" fill="none" opacity="0.7"/>
-          <path d="M 0 295 Q 60 288 120 292 Q 160 296 200 290 Q 240 284 280 288 Q 330 293 380 287 Q 400 285 420 287" 
-                stroke="#5a8a9a" stroke-width="8" fill="none" opacity="0.4"/>
-          <text x="290" y="283" class="water-lbl">Intermediate River</text>
+          <!-- RIVER — runs across bottom, behind The Tara -->
+          <path d="M0,245 Q80,238 160,242 Q220,246 280,240 Q340,234 400,238" fill="none" stroke="#3d7a8a" stroke-width="22" stroke-linecap="round"/>
+          <path d="M0,245 Q80,238 160,242 Q220,246 280,240 Q340,234 400,238" fill="none" stroke="#5a9aaa" stroke-width="8" stroke-linecap="round" opacity="0.5"/>
+          <text x="300" y="237" fill="#7ab0c2" font-size="8" font-family="Arial" font-style="italic" opacity="0.9">Intermediate River</text>
 
-          <!-- Intermediate Lake — top right -->
-          <ellipse cx="385" cy="70" rx="38" ry="45" fill="#4a7a8a" opacity="0.45"/>
-          <text x="385" y="65" text-anchor="middle" class="water-lbl">Inter-</text>
-          <text x="385" y="76" text-anchor="middle" class="water-lbl">mediate</text>
-          <text x="385" y="87" text-anchor="middle" class="water-lbl">Lake</text>
+          <!-- INTERMEDIATE LAKE — top right -->
+          <ellipse cx="370" cy="55" rx="32" ry="42" fill="#3d7a8a" opacity="0.5"/>
+          <text x="370" y="48" text-anchor="middle" fill="#7ab0c2" font-size="7" font-family="Arial" font-style="italic">Intermediate</text>
+          <text x="370" y="58" text-anchor="middle" fill="#7ab0c2" font-size="7" font-family="Arial" font-style="italic">Lake</text>
 
-          <!-- ROADS -->
-          <!-- M-88 / S Bridge St — main N-S spine, right side -->
-          <line x1="300" y1="0" x2="300" y2="340" class="road"/>
-          <!-- Park St — upper N-S -->
-          <line x1="230" y1="0" x2="230" y2="160" class="road-sm"/>
-          <!-- Seneca St — diagonal from upper left to river -->
-          <path d="M 100 60 Q 140 130 180 200 Q 190 230 195 290" class="road" stroke-width="2"/>
-          <!-- W Broad / E Broad — major horizontal -->
-          <line x1="0" y1="200" x2="420" y2="200" class="road"/>
-          <!-- W Cayuga — lower horizontal -->
-          <line x1="0" y1="248" x2="420" y2="248" class="road-sm"/>
-          <!-- Ohio St — mid horizontal -->
-          <line x1="195" y1="155" x2="420" y2="155" class="road-sm"/>
-          <!-- Durham St — upper horizontal -->
-          <line x1="0" y1="95" x2="250" y2="95" class="road-sm"/>
-          <!-- Mound St — left vertical -->
-          <line x1="30" y1="150" x2="30" y2="340" class="road-sm"/>
-          <!-- Elm St — right vertical -->
-          <line x1="370" y1="60" x2="370" y2="340" class="road-sm"/>
-          <!-- Portage Dr — far right -->
-          <line x1="348" y1="130" x2="348" y2="260" class="road-sm"/>
+          <!-- ROADS — all inline strokes -->
+          <!-- M-88 / S Bridge St vertical -->
+          <line x1="280" y1="0" x2="280" y2="300" stroke="rgba(245,240,232,.22)" stroke-width="3"/>
+          <!-- Broad St horizontal — main downtown -->
+          <line x1="0" y1="175" x2="400" y2="175" stroke="rgba(245,240,232,.2)" stroke-width="3"/>
+          <!-- Cayuga St horizontal -->
+          <line x1="0" y1="215" x2="400" y2="215" stroke="rgba(245,240,232,.12)" stroke-width="2"/>
+          <!-- Ohio St horizontal -->
+          <line x1="150" y1="135" x2="400" y2="135" stroke="rgba(245,240,232,.1)" stroke-width="1.5"/>
+          <!-- Durham horizontal top -->
+          <line x1="0" y1="75" x2="220" y2="75" stroke="rgba(245,240,232,.1)" stroke-width="1.5"/>
+          <!-- Seneca St — diagonal, key street -->
+          <path d="M90,0 Q130,80 155,160 Q163,195 165,245" fill="none" stroke="rgba(245,240,232,.22)" stroke-width="2.5"/>
+          <!-- Elm St right -->
+          <line x1="340" y1="80" x2="340" y2="300" stroke="rgba(245,240,232,.1)" stroke-width="1.5"/>
 
-          <!-- BRIDGES — where Seneca/roads cross the river -->
-          <!-- North bridge (Park St area) -->
-          <rect x="225" y="283" width="12" height="18" fill="rgba(245,240,232,.35)" rx="1"/>
-          <text x="231" y="310" text-anchor="middle" class="lbl-sm">bridge</text>
-          <!-- South bridge (M-88) -->
-          <rect x="295" y="283" width="12" height="18" fill="rgba(245,240,232,.35)" rx="1"/>
-          <text x="301" y="310" text-anchor="middle" class="lbl-sm">bridge</text>
+          <!-- BRIDGES over river -->
+          <rect x="157" y="236" width="16" height="12" fill="rgba(245,240,232,.5)" rx="1"/>
+          <rect x="274" y="232" width="16" height="12" fill="rgba(245,240,232,.5)" rx="1"/>
+          <text x="165" y="258" text-anchor="middle" fill="rgba(245,240,232,.4)" font-size="6.5" font-family="Arial">bridge</text>
+          <text x="282" y="254" text-anchor="middle" fill="rgba(245,240,232,.4)" font-size="6.5" font-family="Arial">bridge</text>
 
           <!-- STREET LABELS -->
-          <text x="305" y="12" class="street" transform="rotate(90,305,12)">M-88 / S BRIDGE ST</text>
-          <text x="15" y="193" class="street">W BROAD ST</text>
-          <text x="320" y="193" class="street">E BROAD ST</text>
-          <text x="15" y="243" class="street">W CAYUGA ST</text>
-          <text x="200" y="150" class="street">OHIO ST</text>
-          <text x="15" y="90" class="street">DURHAM ST</text>
-          <text x="122" y="118" class="street" transform="rotate(55,122,118)">SENECA ST</text>
+          <text x="90" y="108" fill="rgba(245,240,232,.3)" font-size="6.5" font-family="Arial" transform="rotate(60,90,108)">SENECA ST</text>
+          <text x="10" y="170" fill="rgba(245,240,232,.3)" font-size="6.5" font-family="Arial">W BROAD ST</text>
+          <text x="295" y="170" fill="rgba(245,240,232,.3)" font-size="6.5" font-family="Arial">E BROAD ST</text>
+          <text x="10" y="210" fill="rgba(245,240,232,.22)" font-size="6" font-family="Arial">W CAYUGA ST</text>
+          <text x="284" y="16" fill="rgba(245,240,232,.3)" font-size="6.5" font-family="Arial">M-88</text>
 
-          <!-- POINTS OF INTEREST -->
-          <!-- Short's Brewing -->
-          <circle cx="280" cy="218" r="6" fill="#b8976a" opacity="0.85"/>
-          <circle cx="280" cy="218" r="3" fill="#f5f0e8"/>
-          <text x="280" y="210" text-anchor="middle" class="poi">Short's Brewing</text>
-          <text x="280" y="200" text-anchor="middle" fill="rgba(184,151,106,.6)" font-size="6" font-family="Arial">· 7 min walk ·</text>
-
-          <!-- Flying Pig -->
-          <circle cx="258" cy="242" r="3.5" class="poi-dot"/>
-          <text x="258" y="236" text-anchor="middle" class="lbl-sm">The Flying Pig</text>
+          <!-- POI DOTS + LABELS -->
+          <!-- Short's Brewing — walk from Tara -->
+          <circle cx="258" cy="190" r="5" fill="#b8976a" opacity="0.9"/>
+          <circle cx="258" cy="190" r="2.5" fill="#f5f0e8"/>
+          <text x="258" y="182" text-anchor="middle" fill="#c8a77a" font-size="7.5" font-family="Arial" font-weight="bold">Short's Brewing</text>
+          <text x="258" y="173" text-anchor="middle" fill="rgba(184,151,106,.65)" font-size="6" font-family="Arial">· walk ·</text>
 
           <!-- Chloe's -->
-          <circle cx="260" cy="175" r="3.5" class="poi-dot"/>
-          <text x="260" y="169" text-anchor="middle" class="lbl-sm">Chloe's Chop House</text>
-
-          <!-- Toonie's -->
-          <circle cx="272" cy="148" r="3.5" class="poi-dot"/>
-          <text x="272" y="142" text-anchor="middle" class="lbl-sm">Toonie's Fish & Steak</text>
+          <circle cx="245" cy="152" r="3" fill="rgba(184,151,106,.65)"/>
+          <text x="245" y="145" text-anchor="middle" fill="rgba(245,240,232,.4)" font-size="6" font-family="Arial">Chloe's</text>
 
           <!-- Corner Bistro -->
-          <circle cx="310" cy="242" r="3.5" class="poi-dot"/>
-          <text x="310" y="236" text-anchor="middle" class="lbl-sm">Corner Bistro</text>
+          <circle cx="292" cy="210" r="3" fill="rgba(184,151,106,.65)"/>
+          <text x="292" y="222" text-anchor="middle" fill="rgba(245,240,232,.4)" font-size="6" font-family="Arial">Corner Bistro</text>
 
           <!-- Courthouse -->
-          <circle cx="335" cy="218" r="3.5" class="poi-dot"/>
-          <text x="335" y="212" text-anchor="middle" class="lbl-sm">Courthouse</text>
+          <circle cx="315" cy="188" r="3" fill="rgba(184,151,106,.55)"/>
+          <text x="315" y="180" text-anchor="middle" fill="rgba(245,240,232,.35)" font-size="6" font-family="Arial">Courthouse</text>
 
-          <!-- THE TARA — gold pin -->
-          <circle cx="175" cy="230" r="16" fill="#b8976a" opacity="0.2"/>
-          <circle cx="175" cy="230" r="10" fill="#b8976a" opacity="0.5"/>
-          <circle cx="175" cy="230" r="6" fill="#d4b48a"/>
-          <circle cx="175" cy="230" r="3" fill="#f5f0e8"/>
-          <line x1="175" x2="175" y1="236" y2="248" stroke="#d4b48a" stroke-width="2"/>
-          <rect x="120" y="248" width="110" height="22" fill="#b8976a" rx="2" opacity="0.9"/>
-          <text x="175" y="263" text-anchor="middle" fill="#1a2e1e" font-size="9" font-weight="bold" font-family="Arial" letter-spacing="0.5">THE TARA · 315 SENECA</text>
+          <!-- THE TARA — gold concentric pin -->
+          <circle cx="155" cy="195" r="20" fill="#b8976a" opacity="0.12"/>
+          <circle cx="155" cy="195" r="13" fill="#b8976a" opacity="0.25"/>
+          <circle cx="155" cy="195" r="8" fill="#c8a77a" opacity="0.85"/>
+          <circle cx="155" cy="195" r="4" fill="#f0e4d0"/>
+          <!-- Label pill -->
+          <rect x="100" y="213" width="110" height="19" fill="#b8976a" rx="3"/>
+          <text x="155" y="226" text-anchor="middle" fill="#1a2e1e" font-size="8.5" font-family="Arial" font-weight="bold">THE TARA · 315 SENECA</text>
 
-          <!-- North indicator -->
-          <text x="400" y="22" text-anchor="middle" fill="rgba(184,151,106,.7)" font-size="10" font-family="Arial">N</text>
-          <line x1="400" x2="400" y1="25" y2="38" stroke="rgba(184,151,106,.5)" stroke-width="1.5"/>
-          <polygon points="400,25 397,32 403,32" fill="rgba(184,151,106,.5)"/>
+          <!-- Compass -->
+          <text x="22" y="22" text-anchor="middle" fill="rgba(184,151,106,.8)" font-size="11" font-family="Arial" font-weight="bold">N</text>
+          <line x1="22" y1="25" x2="22" y2="38" stroke="rgba(184,151,106,.55)" stroke-width="1.5"/>
+          <polygon points="22,24 19,31 25,31" fill="rgba(184,151,106,.55)"/>
 
           <!-- Border -->
-          <rect x="3" y="3" width="414" height="334" fill="none" stroke="rgba(184,151,106,.25)" stroke-width="1"/>
-        </svg>
+          <rect x="2" y="2" width="396" height="296" fill="none" stroke="rgba(184,151,106,.2)" stroke-width="1.5"/>
 
-        <div style="padding:10px 16px;border-top:1px solid rgba(184,151,106,.2);display:flex;justify-content:space-between;align-items:center">
-          <span style="font-size:10px;font-weight:300;color:rgba(245,240,232,.5);letter-spacing:.1em">315 Seneca St · Downtown Bellaire</span>
-          <a href="https://maps.google.com/maps?q=315+Seneca+St,+Bellaire,+MI+49615" target="_blank" style="font-size:9px;font-weight:400;letter-spacing:.18em;text-transform:uppercase;color:var(--brass);text-decoration:none">Open in Maps →</a>
+        </svg>
+        <div style="padding:9px 16px;border-top:1px solid rgba(184,151,106,.18);display:flex;justify-content:space-between;align-items:center">
+          <span style="font-size:10px;font-weight:300;color:rgba(245,240,232,.45);letter-spacing:.08em;font-family:'Josefin Sans',sans-serif">315 Seneca St · Downtown Bellaire</span>
+          <a href="https://maps.google.com/maps?q=315+Seneca+St,+Bellaire,+MI+49615" target="_blank" style="font-size:9px;font-weight:400;letter-spacing:.18em;text-transform:uppercase;color:#b8976a;text-decoration:none;font-family:'Josefin Sans',sans-serif">Open in Maps →</a>
         </div>
       </div>
     </div>
